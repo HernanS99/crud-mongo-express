@@ -13,3 +13,5 @@ const editUser = () => {
 const deleteUser = () => {
     console.log('crear usuario')
 }
+
+module.exports = { createUser , readUser , editUser , deleteUser}
