@@ -1,6 +1,7 @@
-const User = require('..models/User')
+const User = require('../models/User')
 
 const createUser = (req,res) => {
+    console.log(req.body)
     console.log('crear usuario')
 }
 
