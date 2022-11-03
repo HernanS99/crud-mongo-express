@@ -1,8 +1,13 @@
 const User = require('../models/User')
 
-const createUser = (req,res) => {
-    console.log(req.body)
-    console.log('crear usuario')
+const createUser = async(req,res) => {
+    try{
+        const newUser = new User(req.body)
+        await newUser.save()
+        res.json({sucess:true, message: 'User created', id : newUser._id})
+    }catch(err){
+        res.json({sucess: false,message: err.message})
+    }
 }
 
 const readUser = (req,res) => {
