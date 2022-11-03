@@ -3,15 +3,15 @@ const createUser = () => {
 }
 
 const readUser = () => {
-    console.log('crear usuario')
+    console.log('leer usuario')
 }
 
 const editUser = () => {
-    console.log('crear usuario')
+    console.log('editar usuario')
 }
 
 const deleteUser = () => {
-    console.log('crear usuario')
+    console.log('eliminar usuario')
 }
 
 module.exports = { createUser , readUser , editUser , deleteUser}
