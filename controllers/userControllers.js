@@ -1,16 +1,18 @@
-const createUser = () => {
+const User = require('..models/User')
+
+const createUser = (req,res) => {
     console.log('crear usuario')
 }
 
-const readUser = () => {
+const readUser = (req,res) => {
     console.log('leer usuario')
 }
 
-const editUser = () => {
+const editUser = (req,res) => {
     console.log('editar usuario')
 }
 
-const deleteUser = () => {
+const deleteUser = (req,res) => {
     console.log('eliminar usuario')
 }
 
