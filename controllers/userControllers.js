@@ -19,15 +19,20 @@ const readUser = async (req,res) => {
     }
 }
 
-const editUser = (req,res) => {
-    console.log('editar usuario')
+const editUser = async(req,res) => {
+    try{
+        const {id} = req.params
+        const result = await User.findByIdAndUpdate(id, req.body, {new : true})
+        res.json({success: true})
+    } catch (err){
+        res.json({success:false, message: err.message})
+    }
 }
 
 const deleteUser = async (req,res) => {
     try {
         const { id } = req.params
         const result = await User.findByIdAndDelete(id)
-        console.log(result)
         res.json({success: true, response: id})
     } catch (err){
         res.json({success: false, response: err.message})
