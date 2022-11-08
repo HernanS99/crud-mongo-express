@@ -3,10 +3,10 @@ const mongoose = require('mongoose')
 const userSchema = new mongoose.Schema({
     nombre: {type:String,required : true},
     apellido:{type:String,required : true},
-    correo: String,
-    edad: Number,
-    newsletter : Boolean,
-    isAdmin: Boolean
+    correo: {type:String,required : true},
+    edad: {type:Number,required : true},
+    newsletter : {type:Boolean,required : true},
+    isAdmin: {type:Boolean,required : true}
 })
 
 const User = mongoose.model('user',userSchema)
