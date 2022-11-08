@@ -23,8 +23,15 @@ const editUser = (req,res) => {
     console.log('editar usuario')
 }
 
-const deleteUser = (req,res) => {
-    console.log('eliminar usuario')
+const deleteUser = async (req,res) => {
+    try {
+        const { id } = req.params
+        const result = await User.findByIdAndDelete(id)
+        console.log(result)
+        res.json({success: true, response: id})
+    } catch (err){
+        res.json({success: false, response: err.message})
+    }
 }
 
 module.exports = { createUser , readUser , editUser , deleteUser}
