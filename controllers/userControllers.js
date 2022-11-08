@@ -10,8 +10,13 @@ const createUser = async(req,res) => {
     }
 }
 
-const readUser = (req,res) => {
-    console.log('leer usuario')
+const readUser = async (req,res) => {
+    try{
+        const users = await User.find()
+        res.json({success : true,users})
+    }catch (err) {
+        res.json({success: false,message: err.message})
+    }
 }
 
 const editUser = (req,res) => {
