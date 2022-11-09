@@ -6,7 +6,7 @@ router.route('/user')
       .post(createUser)
       .get(readUser)
 router.route('/user/:id')
-      .delete(deleteUser).put(editUser)
+      .delete(deleteUser).put(editUserg)
 
 
 module.exports = router
