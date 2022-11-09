@@ -1,14 +1,14 @@
 const mongoose = require ('mongoose')
 
 const productSchema = new mongoose.Schema({
-    name: String,
-    price: Number,
-    brand: String,
-    inStock: Boolean,
+    name: {type:String,required : true, trim: true, lowercase:true},
+    price: {type:Number,required : true},
+    brand: {type:String,required : true, trim: true, lowercase:true},
+    inStock: {type:Boolean,required : true},
     propiedades: [
       {
-        nombreDeLaPropiedad: String,
-        valorDeLaPropiedad: String || Number
+        nombreDeLaPropiedad: {type:String,required : true, trim: true, lowercase:true},
+        valorDeLaPropiedad:  {type:String || Number ,required : true}
       }
     ]
   })
