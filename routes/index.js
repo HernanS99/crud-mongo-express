@@ -1,5 +1,5 @@
 const express = require('express')
-const { createProduct,readProduct, deleteProduct } = require('../controllers/productControllers')
+const { createProduct,readProduct, deleteProduct, editProduct } = require('../controllers/productControllers')
 const { createUser, readUser, deleteUser, editUser} = require('../controllers/userControllers')
 const router = express.Router()
 
@@ -7,7 +7,8 @@ router.route('/user')
       .post(createUser)
       .get(readUser)
 router.route('/user/:id')
-      .delete(deleteUser).put(editUser)
+      .delete(deleteUser)
+      .put(editUser)
 
 router.route('/products')
       .post(createProduct)
@@ -15,5 +16,6 @@ router.route('/products')
       
 router.route('/products/:id')
       .delete(deleteProduct)
+      .put(editProduct)
 
 module.exports = router

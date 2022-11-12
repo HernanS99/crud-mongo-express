@@ -29,5 +29,15 @@ const deleteProduct = async (req,res) => {
     }
 }
 
+const editProduct = async(req,res) => {
+    try{
+        const {id} = req.params
+        const result = await Product.findByIdAndUpdate(id, req.body, {new : true})
+        res.json({success: true})
+    } catch (err){
+        res.json({success:false, message: err.message})
+    }
+}
 
-module.exports = {createProduct,readProduct,deleteProduct}
+
+module.exports = {createProduct,readProduct,deleteProduct,editProduct}
