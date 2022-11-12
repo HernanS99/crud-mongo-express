@@ -10,4 +10,16 @@ const createProduct = async (req, res) => {
     }
 }
 
-module.exports = {createProduct}
+const readProduct = async (req,res) => {
+    try{
+        const products = await Product.find()
+        res.json({success : true,products})
+    }catch (err) {
+        res.json({success: false,message: err.message})
+    }
+}
+
+
+
+
+module.exports = {createProduct,readProduct}

@@ -1,5 +1,5 @@
 const express = require('express')
-const { createProduct } = require('../controllers/productControllers')
+const { createProduct,readProduct } = require('../controllers/productControllers')
 const { createUser, readUser, deleteUser, editUser} = require('../controllers/userControllers')
 const router = express.Router()
 
@@ -11,6 +11,7 @@ router.route('/user/:id')
 
 router.route('/products')
       .post(createProduct)
+      .get(readProduct)
 
 
 module.exports = router
