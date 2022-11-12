@@ -9,7 +9,8 @@ router.route('/user')
 router.route('/user/:id')
       .delete(deleteUser).put(editUser)
 
-router.route('/products').post(createProduct)
+router.route('/products')
+      .post(createProduct)
 
 
 module.exports = router
