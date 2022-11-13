@@ -1,8 +1,9 @@
 const User = require('../models/User')
 const crypto = require('crypto')
+
+
 const createUser = async(req,res) => {
     try{
-
         const user = await User.findOne({correo: req.body.correo})
         if(user)
         {
@@ -10,8 +11,7 @@ const createUser = async(req,res) => {
         }
         const salt = crypto.randomBytes(16).toString('hex')
         const hash = crypto.pbkdf2Sync(req.body.password,salt,10000,512,'sha512').toString('hex')
-        
-        const newUser = new User({...req.body,password: hash})
+        const newUser = new User({...req.body,password: hash,salt})
         await newUser.save()
         res.json({sucess:true, message: 'User created', id : newUser._id})
     }catch(err){
@@ -48,8 +48,26 @@ const deleteUser = async (req,res) => {
     }
 }
 
-const login = (req,res) => {
+const login = async (req,res) => {
+    try{
+        const { correo , password } = req.body
 
+        const user = await User.findOne({correo})
+        if(!user){
+            throw new Error('La cuenta no existe')
+        }
+
+        const hash = crypto.pbkdf2Sync(password,user.salt,10000,512,'sha512').toString('hex')
+
+        
+        
+        
+        if(user.password !== hash){throw new Error('Contraseña mal')}
+        res.json({success:true, mensaje: 'llegue al login'})
+    }catch(err){
+        res.json({success:false, mensaje:err.message})
+    }
+   
 }
 
 module.exports = { createUser , readUser , editUser , deleteUser, login}

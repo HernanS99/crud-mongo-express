@@ -7,7 +7,8 @@ const userSchema = new mongoose.Schema({
     edad: {type:Number,required : true, min: 18, max: 99},
     newsletter : {type:Boolean,required : true},
     isAdmin: {type:Boolean,required : true},
-    password: {type:String,required:true,minLength:8}
+    password: {type:String,required:true,minLength:8},
+    salt: {type: String, required: true}
 })
 
 const User = mongoose.model('user',userSchema)
