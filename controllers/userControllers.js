@@ -8,10 +8,10 @@ const createUser = async(req,res) => {
         {
              throw new Error('Email en eso')
         }
-        const salt = cryto.randomBytes(16).toString('hex')
-        const hash = crypto.pbkdf2Sync(req.body.password,'1000',10000,512,'sha512').toString('hex')
-        console.log(hash)
-        const newUser = new User(req.body)
+        const salt = crypto.randomBytes(16).toString('hex')
+        const hash = crypto.pbkdf2Sync(req.body.password,salt,10000,512,'sha512').toString('hex')
+        
+        const newUser = new User({...req.body,password: hash})
         await newUser.save()
         res.json({sucess:true, message: 'User created', id : newUser._id})
     }catch(err){
@@ -48,4 +48,8 @@ const deleteUser = async (req,res) => {
     }
 }
 
-module.exports = { createUser , readUser , editUser , deleteUser}
+const login = (req,res) => {
+
+}
+
+module.exports = { createUser , readUser , editUser , deleteUser, login}
