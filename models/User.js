@@ -6,7 +6,8 @@ const userSchema = new mongoose.Schema({
     correo: {type:String,required : true, trim: true, lowercase:true},
     edad: {type:Number,required : true, min: 18, max: 99},
     newsletter : {type:Boolean,required : true},
-    isAdmin: {type:Boolean,required : true}
+    isAdmin: {type:Boolean,required : true},
+    password: {type:String,required:true,minLength:8}
 })
 
 const User = mongoose.model('user',userSchema)
