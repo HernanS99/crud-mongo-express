@@ -1,5 +1,5 @@
 const User = require('../models/User')
-
+const crypto = require('crypto')
 const createUser = async(req,res) => {
     try{
 
@@ -8,6 +8,9 @@ const createUser = async(req,res) => {
         {
              throw new Error('Email en eso')
         }
+        const salt = cryto.randomBytes(16).toString('hex')
+        const hash = crypto.pbkdf2Sync(req.body.password,'1000',10000,512,'sha512').toString('hex')
+        console.log(hash)
         const newUser = new User(req.body)
         await newUser.save()
         res.json({sucess:true, message: 'User created', id : newUser._id})
