@@ -2,6 +2,12 @@ const User = require('../models/User')
 
 const createUser = async(req,res) => {
     try{
+
+        const user = await User.findOne({correo: req.body.correo})
+        if(user)
+        {
+             throw new Error('Email en eso')
+        }
         const newUser = new User(req.body)
         await newUser.save()
         res.json({sucess:true, message: 'User created', id : newUser._id})
