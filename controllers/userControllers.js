@@ -60,8 +60,6 @@ const login = async (req,res) => {
         const hash = crypto.pbkdf2Sync(password,user.salt,10000,512,'sha512').toString('hex')
 
         
-        
-        
         if(user.password !== hash){throw new Error('Contraseña mal')}
         res.json({success:true, mensaje: 'llegue al login'})
     }catch(err){

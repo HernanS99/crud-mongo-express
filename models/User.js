@@ -1,4 +1,6 @@
 const mongoose = require('mongoose')
+const crypto = require('crypto')
+
 
 const userSchema = new mongoose.Schema({
     nombre: {type:String,required : true, trim: true, lowercase:true},
@@ -10,6 +12,14 @@ const userSchema = new mongoose.Schema({
     password: {type:String,required:true,minLength:8},
     salt: {type: String, required: true}
 })
+
+
+userSchema.methods.hashpassword = function(pass){
+    const salt = crypto.randomBytes(16).toString('hex')
+    const hash = crypto.pbkdf2Sync(pass,salt,10000,512,'sha512').toString('hex')
+    return hash
+}
+
 
 const User = mongoose.model('user',userSchema)
 
