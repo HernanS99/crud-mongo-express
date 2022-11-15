@@ -57,7 +57,8 @@ const login = async (req,res) => {
             throw new Error('La cuenta no existe')
         }
 
-        const hash = crypto.pbkdf2Sync(password,user.salt,10000,512,'sha512').toString('hex')
+        newUser.hashPassword(req.body.password)
+        
 
         
         if(user.password !== hash){throw new Error('Contraseña mal')}
