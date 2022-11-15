@@ -21,8 +21,6 @@ userSchema.methods.hashPassword = function(password){
 
 userSchema.methods.validatePassword = function (password, salt, passwordDB) {
     const hash = crypto.pbkdf2Sync(password, salt, 10000, 512, 'sha512').toString('hex')
-    console.log(hash)
-    console.log(passwordDB)
     return hash === passwordDB
   }
 

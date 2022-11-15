@@ -2,6 +2,8 @@ const express = require('express')
 const { createCart } = require('../controllers/cartControllers')
 const { createProduct,readProduct, deleteProduct, editProduct } = require('../controllers/productControllers')
 const { createUser, readUser, deleteUser, editUser,login} = require('../controllers/userControllers')
+const auth = require('../middlewares/auth')
+
 const router = express.Router()
 
 router.route('/user')
