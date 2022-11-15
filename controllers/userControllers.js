@@ -61,7 +61,10 @@ const login = async (req,res) => {
         
 
         
-        if(user.password !== hash){throw new Error('Contraseña mal')}
+        const validate = user.validatePassword(password, user.salt, user.password)
+        if (!validate) {
+          throw new Error('Usuario y/o clave incorrecta')
+        }
         res.json({success:true, mensaje: 'llegue al login'})
     }catch(err){
         res.json({success:false, mensaje:err.message})
