@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const crypto = require('crypto')
-
+const jwt = require('jsonwebtoken')
 
 const userSchema = new mongoose.Schema({
     nombre: {type:String,required : true, trim: true, lowercase:true},
@@ -26,6 +26,10 @@ userSchema.methods.validatePassword = function (password, salt, passwordDB) {
     return hash === passwordDB
   }
 
+userSchema.methods.generateToken = function (){
+    const token = jwt.sign({id : this._id}, process.env.SECRET)
+    return token
+}
 
 const User = mongoose.model('user',userSchema)
 

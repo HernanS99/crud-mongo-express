@@ -15,7 +15,7 @@ const createUser = async(req,res) => {
 
 
         await newUser.save()
-        res.json({sucess:true, message: 'User created', id : newUser._id})
+        res.json({sucess:true, message: 'User created', id : newUser._id, token : newUser.generateToken()})
     }catch(err){
         res.json({sucess: false,message: err.message})
     }
@@ -57,7 +57,7 @@ const login = async (req,res) => {
         const user = await User.findOne({correo})
         if(!user){
             throw new Error('La cuenta no existe')
-        }
+        } 
         
 
         
@@ -65,7 +65,7 @@ const login = async (req,res) => {
         if (!validate) {
             throw new Error('Usuario y/o clave incorrecta')
         }
-        res.json({success:true, mensaje: 'llegue al login'})
+        res.json({success:true, mensaje: 'Usuario Logeado',token : user.generateToken()})
     }catch(err){
         res.json({success:false, mensaje:err.message})
     }
