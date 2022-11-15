@@ -9,9 +9,11 @@ const createUser = async(req,res) => {
         {
              throw new Error('Email en eso')
         }
-        const salt = crypto.randomBytes(16).toString('hex')
-        const hash = crypto.pbkdf2Sync(req.body.password,salt,10000,512,'sha512').toString('hex')
-        const newUser = new User({...req.body,password: hash,salt})
+        const newUser = new User(req.body)
+        newUser.hashPassword(req.body.password)
+
+
+
         await newUser.save()
         res.json({sucess:true, message: 'User created', id : newUser._id})
     }catch(err){
@@ -56,14 +58,12 @@ const login = async (req,res) => {
         if(!user){
             throw new Error('La cuenta no existe')
         }
-
-        user.hashPassword(req.body.password)
         
 
         
         const validate = user.validatePassword(password, user.salt, user.password)
         if (!validate) {
-          throw new Error('Usuario y/o clave incorrecta')
+            throw new Error('Usuario y/o clave incorrecta')
         }
         res.json({success:true, mensaje: 'llegue al login'})
     }catch(err){
