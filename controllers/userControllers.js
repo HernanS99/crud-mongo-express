@@ -57,7 +57,7 @@ const login = async (req,res) => {
             throw new Error('La cuenta no existe')
         }
 
-        newUser.hashPassword(req.body.password)
+        user.hashPassword(req.body.password)
         
 
         

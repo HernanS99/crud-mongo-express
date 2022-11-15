@@ -14,11 +14,15 @@ const userSchema = new mongoose.Schema({
 })
 
 
-userSchema.methods.hashpassword = function(pass){
+userSchema.methods.hashPassword = function(password){
     this.salt = crypto.randomBytes(16).toString('hex')
-    this.hash = crypto.pbkdf2Sync(pass,salt,10000,512,'sha512').toString('hex')
-    return hash
+    this.password = crypto.pbkdf2Sync(password,this.salt,10000,512,'sha512').toString('hex')
 }
+
+userSchema.methods.validatePassword = function (password, salt, passwordDB) {
+    const hash = crypto.pbkdf2Sync(password, salt, 10000, 512, 'sha512').toString('hex')
+    return hash === passwordDB
+  }
 
 
 const User = mongoose.model('user',userSchema)
