@@ -18,7 +18,7 @@ router.route('/user/login')
       .post(login)
 
 router.route('/products')
-      .post(createProduct)
+      .post(auth, createProduct)
       .get(readProduct)
       
 router.route('/products/:id')
