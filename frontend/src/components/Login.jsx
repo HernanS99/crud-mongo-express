@@ -1,3 +1,7 @@
+import { Link } from 'react-router-dom'
+import toast, { Toaster } from 'react-hot-toast';
+
+
 const Login = () => {
     
         return (
@@ -28,10 +32,10 @@ const Login = () => {
 
                                     </div> */}
 
-                                    <div>
+                                    {/* <div>
                                         <p className="mb-0">No tienes una cuenta? <Link to="/Register">Registrarse</Link>
                                         </p>
-                                    </div>
+                                    </div> */}
 
                                 </div>
                             </div>
