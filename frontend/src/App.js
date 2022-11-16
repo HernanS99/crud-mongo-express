@@ -5,6 +5,7 @@ import NotFound from './views/NotFound';
 import Home from './views/Home';
 
 function App() {
+  return(
   <Routes>
     <Route
       path='/' 
@@ -19,6 +20,7 @@ function App() {
     element={<NotFound/>}
     />
   </Routes>
+  )
 }
 
 export default App;
