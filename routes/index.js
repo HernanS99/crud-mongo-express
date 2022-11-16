@@ -22,8 +22,8 @@ router.route('/products')
       .get(readProduct)
       
 router.route('/products/:id')
-      .delete(deleteProduct)
-      .put(editProduct)
+      .delete(auth,deleteProduct)
+      .put(auth,editProduct)
 
 router.route('/cart')
       .post(createCart)
