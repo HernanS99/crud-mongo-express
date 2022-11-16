@@ -1,8 +1,8 @@
 import './App.css';
 import { Routes , Route, Navigate } from 'react-router-dom'
-import Login from '../components/Login';
+import Login from './components/Login';
 import NotFound from '../views/NotFound';
-import Home from '../components/Home';
+import Home from './views/Home';
 
 function App() {
   <Routes>
