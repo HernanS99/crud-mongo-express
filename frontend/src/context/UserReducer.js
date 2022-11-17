@@ -5,7 +5,7 @@ const userReducers = (state, action) => {
         case 'REGISTER':
             return {token: payload}
         default:
-            return State
+            return state
     }
 }
 
