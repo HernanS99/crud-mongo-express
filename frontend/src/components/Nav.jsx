@@ -4,7 +4,7 @@ import Footer from "./Footer"
 const Nav = () =>{
     return(
         <main>
-            <NavMax />
+            <Navmax />
             {props.children}
             <Footer/>
         </main>

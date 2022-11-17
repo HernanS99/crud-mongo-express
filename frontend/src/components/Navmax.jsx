@@ -1,3 +1,6 @@
+import { NavLink } from 'react-router-dom'
+
+
 const Navmax = () => {
     return (
         <div>
