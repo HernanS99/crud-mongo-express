@@ -1,9 +1,13 @@
-import React from "react"
+
+import Aboutus from "../components/Aboutus"
+import Contact from "../components/Contact"
 
 const Home = () => {
-    console.log("aca estmaos")
-    return (
-        <h1>asasdasdd</h1>
+    return(
+        <div>
+            <Aboutus />
+            <Contact />
+        </div>
     )
 }
 

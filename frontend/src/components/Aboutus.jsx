@@ -4,7 +4,7 @@ const Aboutus = () => {
             <div className="container mb-5">
                 <div className="row">
                     <div className="col-lg-6">
-                        <img src={Img} className="img-fluid" alt=""/>
+                        {/* <img src={Img} className="img-fluid" alt=""/> */}
                     </div>
                     <div className="col-lg-6 pt-4 pt-lg-0">
                         <h3>Nosotros</h3>
