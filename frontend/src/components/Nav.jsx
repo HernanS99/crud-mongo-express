@@ -1,7 +1,7 @@
 import Navmax from "./Navmax"
 import Footer from "./Footer"
 
-const Nav = () =>{
+const Nav = (props) =>{
     return(
         <main>
             <Navmax />
