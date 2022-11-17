@@ -29,7 +29,7 @@ const Login = () => {
                                         <p className="text-white-50 mb-5">Ingresa los datos solicitados</p>
 
                                         <div className="form-outline form-white mb-4">
-                                            <input type="email" id="typeEmailX" name="email" className="form-control form-control-lg" onChange={(evento) => handleInput(evento)} />
+                                            <input type="email" id="typeEmailX" name="correo" className="form-control form-control-lg" onChange={(evento) => handleInput(evento)} />
                                             <label className="form-label">Correo</label>
                                         </div>
 
@@ -38,7 +38,7 @@ const Login = () => {
                                             <label className="form-label">Contraseña</label>
                                         </div>
 
-                                        <button className="btn btn-outline-light btn-lg px-5" type="submit" /* onClick={} */>Login</button>
+                                        <button className="btn btn-outline-light btn-lg px-5" type="submit"  onClick={signin} >Login</button>
                                     </div> 
                                      <div>
                                         <p className="mb-0">No tienes una cuenta? <Link to="/Register">Registrarse</Link>
