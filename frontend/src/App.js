@@ -5,8 +5,11 @@ import NotFound from './views/NotFound';
 import Home from './views/Home';
 import Nav from './components/Nav';
 import AdminPage from './views/AdminPage';
+import { useState } from 'react';
 
 function App() {
+  const {token, setToken} = useState(null)
+  
   return(
     <div>
       <Nav>
