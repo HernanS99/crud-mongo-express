@@ -6,7 +6,7 @@ const Navmax = () => {
         <div>
             <nav className="navbar navbar-expand-lg bg-light">
                 <div className="container">
-                    <img className="navbar-brand" src="" width="80" height="54" alt="" />Restorant Comida Japonesa
+                    <img className="navbar-brand" src="https://findicons.com/files/icons/1580/devine_icons_part_2/512/device_and_hardware.png" width="50" height="54" alt="" />hardware.exe
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

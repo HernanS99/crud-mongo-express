@@ -6,7 +6,7 @@ const Hero = () => {
             <div className="row ">
                 <div className="col-xl-5 col-md-12 p-5">
                     <h1 className='text-center fs-1 fw-bold'>Bienvenido</h1>
-                    <h4 className='mt-5'>Te invitamos a disfrutar de nuestra gastronomia! Los mejores platillos directamente de la cultura Ásiatica, que junto a los ingredientes más frescos deleitarán tu paladar.</h4>
+                    <h4 className='mt-5'>Te invitamos a disfrutar de nuestra tienda de componentes computacionales! Lo mejor del hardware actual al mejor precio</h4>
                 </div>
                 <div className="col-xl-7 col-md-12 p-5">
                     <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
