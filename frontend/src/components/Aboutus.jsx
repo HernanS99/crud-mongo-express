@@ -1,10 +1,12 @@
+import about from '../assets/img/about.jpg'
+
 const Aboutus = () => {
     return(
         <section id="about" className="about">
             <div className="container mb-5">
                 <div className="row">
                     <div className="col-lg-6">
-                        {/* <img src={Img} className="img-fluid" alt=""/> */}
+                        <img src={about} className="img-fluid" alt=""/>
                     </div>
                     <div className="col-lg-6 pt-4 pt-lg-0">
                         <h3>Nosotros</h3>
