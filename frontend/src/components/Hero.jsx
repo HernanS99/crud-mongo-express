@@ -1,3 +1,5 @@
+import Carousel from 'react-bootstrap/Carousel';
+
 const Hero = () => {
     return(
         <div className="container">
@@ -9,7 +11,7 @@ const Hero = () => {
                 <div className="col-xl-7 col-md-12 p-5">
                     <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
                         <Carousel variant="dark">
-                            <Carousel.Item>
+                            {/* <Carousel.Item>
                                 <img
                                     className="w-100 img-fluid"
                                     height=""
@@ -23,7 +25,7 @@ const Hero = () => {
                                     src={Front}
                                     alt="Second slide"
                                 />
-                            </Carousel.Item>
+                            </Carousel.Item> */}
                         </Carousel>
                     </div>
                 </div>
