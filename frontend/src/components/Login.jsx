@@ -1,9 +1,17 @@
 import { Link } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast';
 import React from "react"
-
+import { useEffect, useState } from "react"
+ 
 const Login = () => {
-    
+    const [user, setUser] = useState({})
+    const handleInput = (evento) => {
+        const { value, name } = evento.target
+        setUser({
+            ...user,
+            [name]: value
+        })
+    }
         return (
             <section className="vh-100 gradient-custom">
                 <div className="container py-5 h-100">
@@ -11,9 +19,7 @@ const Login = () => {
                         <div className="col-12 col-md-8 col-lg-6 col-xl-5">
                             <div className="card bg-dark text-white">
                                 <div className="card-body p-5 text-center">
-
-                                    {/* <div className="mb-md-5 mt-md-4 pb-5">
-
+                                     <div className="mb-md-5 mt-md-4 pb-5">
                                         <h2 className="fw-bold mb-2 text-uppercase">Iniciar Sesion</h2>
                                         <p className="text-white-50 mb-5">Ingresa los datos solicitados</p>
 
@@ -27,14 +33,12 @@ const Login = () => {
                                             <label className="form-label">Contraseña</label>
                                         </div>
 
-                                        <button className="btn btn-outline-light btn-lg px-5" type="submit" onClick={() => logInWithEmailAndPassword(user.email, user.password)}>Login</button>
-
-                                    </div> */}
-
-                                    {/* <div>
+                                        <button className="btn btn-outline-light btn-lg px-5" type="submit" /* onClick={} */>Login</button>
+                                    </div> 
+                                     <div>
                                         <p className="mb-0">No tienes una cuenta? <Link to="/Register">Registrarse</Link>
                                         </p>
-                                    </div> */}
+                                    </div> 
 
                                 </div>
                             </div>
