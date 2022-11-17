@@ -12,6 +12,11 @@ const Login = () => {
             [name]: value
         })
     }
+
+    const signin = () => {
+
+    }
+
         return (
             <section className="vh-100 gradient-custom">
                 <div className="container py-5 h-100">
