@@ -4,6 +4,7 @@ import Login from './components/Login';
 import NotFound from './views/NotFound';
 import Home from './views/Home';
 import Nav from './components/Nav';
+import AdminPage from './views/AdminPage';
 
 function App() {
   return(
@@ -17,6 +18,10 @@ function App() {
             <Route
               path='/Login'
               element={<Login />}
+            />
+            <Route
+              path='/Admin'
+              element={<AdminPage />}
             />
             <Route 
               path='*' 
