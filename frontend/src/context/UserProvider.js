@@ -1,6 +1,6 @@
 import UserContext from "./UserContext"
 
-const UserProvider = (children) => {
+const UserProvider = ({children}) => {
     return ( 
         <UserContext.Provider value={{}}>
             {children}
