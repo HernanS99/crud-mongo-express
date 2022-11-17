@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import toast, { Toaster } from 'react-hot-toast';
 import React from "react"
 import { useEffect, useState } from "react"
+import { useContext } from 'react';
+import UserContext from '../context/UserContext';
  
 const Login = () => {
     const [user, setUser] = useState({})
@@ -12,7 +14,7 @@ const Login = () => {
             [name]: value
         })
     }
-
+    
     const signin = () => {
 
     }

@@ -2,7 +2,11 @@ import UserContext from "./UserContext"
 
 const UserProvider = ({children}) => {
     return ( 
-        <UserContext.Provider value={{}}>
+        <UserContext.Provider 
+            value={{
+            nombre:'juanito'
+            }}>
+            
             {children}
         </UserContext.Provider>
     )
