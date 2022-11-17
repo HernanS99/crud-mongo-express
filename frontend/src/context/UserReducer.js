@@ -8,3 +8,5 @@ const userReducers = (state, action) => {
             return State
     }
 }
+
+export default userReducers
