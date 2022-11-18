@@ -1,3 +1,5 @@
+import AddProduct from "./AddProduct"
+
 const ProductsMenu = () => {
     return (
         <div>
@@ -5,7 +7,7 @@ const ProductsMenu = () => {
                 <p className="text-center fs-1 ">Menu de productos</p>
             </div>
             <div>
-                {/* <AddProduct update={getProducts}/> */}
+                {<AddProduct update={getProducts}/>}
             </div>
             <div className="table-responsive">
                 <table className="table">
