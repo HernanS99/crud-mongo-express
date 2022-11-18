@@ -7,7 +7,7 @@ const ProductsMenu = () => {
                 <p className="text-center fs-1 ">Menu de productos</p>
             </div>
             <div>
-                {<AddProduct update={getProducts}/>}
+                {<AddProduct/>}
             </div>
             <div className="table-responsive">
                 <table className="table">
