@@ -27,7 +27,7 @@ const Catalogue = () => {
                 </div>
             </div>
             <div className="row ">
-             {products.map((product)=><Card datos={product} key={products._id}/>) }
+             {products.map((product)=><Card datos={product} key={product._id}/>) }
             </div>
         </div>
     )
