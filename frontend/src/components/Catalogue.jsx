@@ -6,11 +6,11 @@ import Card from "./Card"
 const Catalogue = () => {
     
     const [products , setProducts] = useState([])
-    
+    let res = null
     const getProductos = async() =>{
         try{
-            const res = await axios.get('http://localhost:4000/api/products/')
-            setProducts(res.data)
+            res = await axios.get('http://localhost:4000/api/products/')
+            setProducts(res.data.products)
         }catch(e){
             console.log(e)
         }
@@ -27,7 +27,7 @@ const Catalogue = () => {
                 </div>
             </div>
             <div className="row ">
-             {products.map(producto=><Card datos={producto} key={producto.id}/>) }
+             {products.map((product)=><Card datos={product} key={products._id}/>) }
             </div>
         </div>
     )
