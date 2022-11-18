@@ -1,4 +1,23 @@
+import { useState } from "react"
+import axios from 'axios'
+import { useEffect } from "react"
+
 const Catalogue = () => {
+    
+    const [products , setProducts] = useState([])
+    
+    const getProductos = async() =>{
+        try{
+            const res = await axios.get('http://localhost:4000/api/products/')
+            setProducts(res.data)
+        }catch(e){
+            console.log(e)
+        }
+    }
+
+    useEffect(()=>{
+        getProductos()
+    })
     return(
         <div className="container">
             <div className="row">
@@ -7,7 +26,7 @@ const Catalogue = () => {
                 </div>
             </div>
             <div className="row ">
-             {/* { productos.map(producto=><Card datos={producto} key={producto.id}/>) }  */}
+             {products.map(producto=><Card datos={producto} key={producto.id}/>) }
             </div>
         </div>
     )
