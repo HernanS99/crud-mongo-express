@@ -1,6 +1,23 @@
-const AddProduct = () => {
+import { useState } from "react"
 
+const AddProduct = () => {
+    let nombre,precio,descripcion,img = ""
+    const [insert, saveInsert] = useState(false)
+    const [product, saveProduct] = useState({nombre,precio,descripcion,img})
+
+    const changeState = () => {
+        saveInsert(true)
+    }
     
+    const handleInput = (e) => {
+        const  { value , name } = e.target
+        saveProduct({
+            ...product,
+            [name]: value
+        }
+        )
+    }
+
     return(
         <div className="container">
             {
@@ -27,7 +44,7 @@ const AddProduct = () => {
                     <input type="text" className="form-control" name="img" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" onChange={(evento) => handleInput(evento)}/>
                 </div>
                 <div className="col-md-12 text-center mb-3">
-                    <button type="button" className="btn btn-primary btn-lg" onClick={saveProductos}>Enviar</button>
+                    <button type="button" className="btn btn-primary btn-lg" /* onClick={saveProductos} */>Enviar</button>
                 </div>
             </div>
             }
