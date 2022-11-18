@@ -5,7 +5,7 @@ const ProductsMenu = () => {
                 <p className="text-center fs-1 ">Menu de productos</p>
             </div>
             <div>
-                <AddProduct update={getProducts}/>
+                {/* <AddProduct update={getProducts}/> */}
             </div>
             <div className="table-responsive">
                 <table className="table">
@@ -21,12 +21,9 @@ const ProductsMenu = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {productos.map(product => <ProductsRow datos={product} update={getProducts} key={product.id} />)}
+                       {/*  {productos.map(product => <ProductsRow datos={product} update={getProducts} key={product.id} />)} */}
                     </tbody>
                 </table>
-            </div>
-            <div className="text-center mb-3">
-                <button type="button" className="btn btn-success" onClick={() => signOutUser()}>Cerrar Sesion</button>
             </div>
         </div>
     )

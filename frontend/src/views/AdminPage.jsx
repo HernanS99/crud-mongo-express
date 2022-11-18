@@ -1,6 +1,8 @@
+import ProductsMenu from "../components/ProductsMenu"
+
 const AdminPage = () => {
     return (
-        <p>asd</p>
+        <ProductsMenu/>
     )
 }
 export default AdminPage
