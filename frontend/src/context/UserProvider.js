@@ -5,21 +5,23 @@ import axios from 'axios'
 
 const UserProvider = ({children}) => {
     const [userState, dispatch] = useReducer(userReducers,{token: null})
-    try{
-        const createAcount = async () => {
-            const respuesta = await axios.post('http://localhost:4000/api/usuario',user)
-            if(respuesta.data.success){
-    
+  
+        const createAccount = async () => {
+            try{
+                const respuesta = await axios.post('http://localhost:4000/api/usuario',user)
+                if(respuesta.data.success){
+                    dispatch({type: 'REGISTER', payload: respuesta.data.token})
+                }
+            }catch(e){
+                console.log(e)
             }
+            
         }
-    }catch(e){
-        console.log(e)
-    }
     
     
 
     return ( 
-        <UserContext.Provider value={{userState}}> {children} </UserContext.Provider>
+        <UserContext.Provider value={{userState, createAccount}}> {children} </UserContext.Provider>
     )
 }
 
