@@ -3,7 +3,9 @@ import UserContext from '../context/UserContext'
 
 
 const Register = () => {
+
     const state = useContext(UserContext)
+    console.log(state)
     const [user, setUser] = useState({})
     const handleInput = (evento) => {
         const { value, name } = evento.target
@@ -14,12 +16,8 @@ const Register = () => {
     }
     console.log(user)
     const register = () => {
-        try{
             state.createAccount(user)
-        }catch(e)
-        {
-            console.log(e)
-        }
+            
        
     }
 

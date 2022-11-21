@@ -5,11 +5,13 @@ import NotFound from './views/NotFound';
 import Home from './views/Home';
 import Nav from './components/Nav';
 import AdminPage from './views/AdminPage';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Register from './views/Register';
+import UserContext from './context/UserContext';
 
 function App() {
-  
+  const context = useContext(UserContext)
+  const token = context.userState.token
   return(
     <div>
       <Nav>
@@ -18,14 +20,20 @@ function App() {
               path='/' 
               element={<Home />}
             />
-            <Route
-              path='/Login'
-              element={<Login />}
-            />
-            <Route
+            
+            {!token && (
+              <Route
               path='/Register'
               element={<Register />}
             />
+            )}
+            {!token && (
+              <Route
+              path='/Login'
+              element={<Login />}
+            />
+            )}
+            
             <Route
               path='/Admin'
               element={<AdminPage />}

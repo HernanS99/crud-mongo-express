@@ -2,15 +2,18 @@ import UserContext from "./UserContext"
 import { useReducer } from "react"
 import userReducers from "./UserReducer"
 import axios from 'axios'
-
+import { useNavigate } from "react-router-dom";
 const UserProvider = ({children}) => {
+    const navigate = useNavigate();
     const [userState, dispatch] = useReducer(userReducers,{token: null})
         const createAccount = async (user) => {
             try{
                 const respuesta = await axios.post('http://localhost:4000/api/user',user)
-                if(respuesta.data.success){
+                console.log(respuesta)
+                if(respuesta.data.sucess){
+                    navigate("/");
                     dispatch({type: 'REGISTER', payload: respuesta.data.token})
-                    console.log("creado")
+                    
                 }
             }catch(e){
                 console.log(e)
