@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import UserContext from '../context/UserContext'
 
 
@@ -12,9 +12,15 @@ const Register = () => {
             [name]: value
         })
     }
-
+    console.log(user)
     const register = () => {
-        state.createAccount(user)
+        try{
+            state.createAccount(user)
+        }catch(e)
+        {
+            console.log(e)
+        }
+       
     }
 
     return(
@@ -48,7 +54,7 @@ const Register = () => {
                                         <input type="password" id="password" name="password" className="form-control form-control-lg" onChange={(evento) => handleInput(evento)} />
                                         <label className="form-label">Contraseña</label>
                                     </div>
-                                    <button className="btn btn-outline-light btn-lg px-5" type="submit" onClick={register}>Registrar</button>
+                                    <button className="btn btn-outline-light btn-lg px-5" type="button" onClick={register}>Registrar</button>
                                 </div>
                                 <div>
                                     <p className="mb-0">Ya tienes una cuenta? <a href="./Login" className="text-white-50 fw-bold">Inicia sesion</a></p>

@@ -4,16 +4,15 @@ const crypto = require('crypto')
 
 const createUser = async(req,res) => {
     try{
+        
         const user = await User.findOne({correo: req.body.correo})
         if(user)
         {
-             throw new Error('Email en eso')
+            throw new Error('Email en eso')
         }
+        console.log("ads")
         const newUser = new User(req.body)
         newUser.hashPassword(req.body.password)
-
-
-
         await newUser.save()
         res.json({sucess:true, message: 'User created', id : newUser._id, token : newUser.generateToken()})
     }catch(err){
@@ -58,9 +57,6 @@ const login = async (req,res) => {
         if(!user){
             throw new Error('La cuenta no existe')
         } 
-        
-
-        
         const validate = user.validatePassword(password, user.salt, user.password)
         if (!validate) {
             throw new Error('Usuario y/o clave incorrecta')

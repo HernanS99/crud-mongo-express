@@ -7,9 +7,10 @@ const UserProvider = ({children}) => {
     const [userState, dispatch] = useReducer(userReducers,{token: null})
         const createAccount = async (user) => {
             try{
-                const respuesta = await axios.post('http://localhost:4000/api/usuario',user)
+                const respuesta = await axios.post('http://localhost:4000/api/user',user)
                 if(respuesta.data.success){
                     dispatch({type: 'REGISTER', payload: respuesta.data.token})
+                    console.log("creado")
                 }
             }catch(e){
                 console.log(e)
