@@ -1,8 +1,11 @@
+import { useContext } from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import UserContext from '../context/UserContext'
 
 
 const Navmax = () => {
-
+    const context = useContext(UserContext)
+    const token = context.userState.token
     const navItemsBasic = [
         { text: 'Inicio', path: '/' },
         { text: 'Productos', path: '/productos' }
@@ -25,7 +28,7 @@ const Navmax = () => {
                                     </Link>
                                 </li>
                             ))}
-                            
+                            {!token &&
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Usuario</a>
                                     <ul class="dropdown-menu">
@@ -37,7 +40,22 @@ const Navmax = () => {
                                         </Link>
                                     </ul>
                                 </li>
+                            }
+                            {token &&
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Usuario</a>
+                                    <ul class="dropdown-menu">
+                                        <Link to='/user' className="dropdown-item nav-link">
+                                            Mi cuenta
+                                        </Link>
+                                        <Link to='/logout' className="dropdown-item nav-link">
+                                            Cerrar Sesion
+                                        </Link>
+                                    </ul>
+                                </li>
+                            }
                         </ul>
+
                     </div>
                 </div>
             </nav>
