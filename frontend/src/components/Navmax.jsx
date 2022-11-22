@@ -1,4 +1,4 @@
-import { NavLink , Link } from 'react-router-dom'
+import { NavLink, Link } from 'react-router-dom'
 
 
 const Navmax = () => {
@@ -6,9 +6,9 @@ const Navmax = () => {
     const navItems = [
         { text: 'Inicio', path: '/' },
         { text: 'Productos', path: '/productos' },
-        { text: 'Iniciar Sesion', path: '/login'},
-        { text: 'Registrarse', path: '/register'}
-      ]
+        { text: 'Iniciar Sesion', path: '/login' },
+        { text: 'Registrarse', path: '/register' }
+    ]
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-light">
@@ -19,14 +19,21 @@ const Navmax = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarScroll">
                         <ul className="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll ">
-                        {navItems.map((item) => (
-              <li className="nav-item" key={item.path}>
-                <Link to={item.path} className="nav-link">
-                  {item.text}
-                </Link>
-              </li>
-            ))}
-
+                            {navItems.map((item) => (
+                                <li className="nav-item" key={item.path}>
+                                    <Link to={item.path} className="nav-link">
+                                        {item.text}
+                                    </Link>
+                                </li>
+                            ))}
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
+                                    <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
+                                    <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
