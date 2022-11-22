@@ -24,11 +24,10 @@ const UserProvider = ({children}) => {
                 const respuesta = await axios.post('http://localhost:4000/api/user/login',user)
                 if(respuesta.data.sucess){
                     navigate("/");
-                    dispatch({type: 'REGISTER', payload: respuesta.data.token})
-                    
+                    dispatch({type: 'LOGIN', payload: respuesta.data.token})
                 }
             }catch(e){
-
+                console.log(e)
             }
         }
     return ( 
