@@ -17,7 +17,7 @@ const Login = () => {
     }
 
     const signin = () => {
-        
+        state.login(user)
     }
 
         return (
