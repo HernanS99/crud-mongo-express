@@ -6,6 +6,7 @@ import { useContext } from 'react';
 import UserContext from '../context/UserContext';
  
 const Login = () => {
+    const state = useContext(UserContext)
     const [user, setUser] = useState({})
     const handleInput = (evento) => {
         const { value, name } = evento.target
@@ -16,7 +17,7 @@ const Login = () => {
     }
 
     const signin = () => {
-
+        
     }
 
         return (
