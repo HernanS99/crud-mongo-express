@@ -22,7 +22,8 @@ const UserProvider = ({children}) => {
         const login = async (user) => {
             try{
                 const respuesta = await axios.post('http://localhost:4000/api/user/login',user)
-                if(respuesta.data.sucess){
+                console.log(respuesta)
+                if(respuesta.data.success){
                     navigate("/");
                     dispatch({type: 'LOGIN', payload: respuesta.data.token})
                 }

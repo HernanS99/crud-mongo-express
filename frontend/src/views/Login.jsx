@@ -41,7 +41,7 @@ const Login = () => {
                                             <label className="form-label">Contraseña</label>
                                         </div>
 
-                                        <button className="btn btn-outline-light btn-lg px-5" type="submit"  onClick={signin} >Login</button>
+                                        <button className="btn btn-outline-light btn-lg px-5" type="button"  onClick={signin} >Login</button>
                                     </div> 
                                      <div>
                                         <p className="mb-0">No tienes una cuenta? <Link to="/Register">Registrarse</Link>

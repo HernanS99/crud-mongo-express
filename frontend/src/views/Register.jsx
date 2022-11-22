@@ -3,7 +3,6 @@ import UserContext from '../context/UserContext'
 
 
 const Register = () => {
-
     const state = useContext(UserContext)
     const [user, setUser] = useState({})
     const handleInput = (evento) => {
@@ -13,11 +12,9 @@ const Register = () => {
             [name]: value
         })
     }
-    console.log(user)
+    
     const register = () => {
             state.createAccount(user)
-            
-       
     }
 
     return(
