@@ -3,12 +3,11 @@ import { NavLink, Link } from 'react-router-dom'
 
 const Navmax = () => {
 
-    const navItems = [
+    const navItemsBasic = [
         { text: 'Inicio', path: '/' },
-        { text: 'Productos', path: '/productos' },
-        { text: 'Iniciar Sesion', path: '/login' },
-        { text: 'Registrarse', path: '/register' }
+        { text: 'Productos', path: '/productos' }
     ]
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-light">
@@ -19,21 +18,25 @@ const Navmax = () => {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarScroll">
                         <ul className="navbar-nav ms-auto my-2 my-lg-0 navbar-nav-scroll ">
-                            {navItems.map((item) => (
+                            {navItemsBasic.map((item) => (
                                 <li className="nav-item" key={item.path}>
                                     <Link to={item.path} className="nav-link">
                                         {item.text}
                                     </Link>
                                 </li>
                             ))}
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#scrollspyHeading3">Third</a></li>
-                                    <li><a class="dropdown-item" href="#scrollspyHeading4">Fourth</a></li>
-                                    <li><a class="dropdown-item" href="#scrollspyHeading5">Fifth</a></li>
-                                </ul>
-                            </li>
+                            
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Usuario</a>
+                                    <ul class="dropdown-menu">
+                                        <Link to='/login' className="dropdown-item nav-link">
+                                            Iniciar Sesion
+                                        </Link>
+                                        <Link to='/register' className="dropdown-item nav-link">
+                                            Registrarse
+                                        </Link>
+                                    </ul>
+                                </li>
                         </ul>
                     </div>
                 </div>
