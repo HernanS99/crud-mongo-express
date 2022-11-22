@@ -19,6 +19,18 @@ const UserProvider = ({children}) => {
                 console.log(e)
             }
         }
+        const login = async (user) => {
+            try{
+                const respuesta = await axios.post('http://localhost:4000/api/user/login',user)
+                if(respuesta.data.sucess){
+                    navigate("/");
+                    dispatch({type: 'REGISTER', payload: respuesta.data.token})
+                    
+                }
+            }catch(e){
+
+            }
+        }
     return ( 
         <UserContext.Provider value={{userState, createAccount}}> {children} </UserContext.Provider>
     )
