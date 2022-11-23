@@ -57,4 +57,4 @@ const editProduct = async(req,res) => {
 }
 
 
-module.exports = {createProduct,readProduct,deleteProduct,editProduct}
+module.exports = {createProduct,readProduct,deleteProduct,editProduct,readProductById}
