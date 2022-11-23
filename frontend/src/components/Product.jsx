@@ -1,10 +1,13 @@
-const Product = () =>{
-    return(
-        <div className="col-sm-6 col-md-4 col-xl-3">
+import nf from '../assets/img/nf.png'
+
+const Product = () => {
+    return (
+        <div className='row'>
+            <div className="col-sm-6 col-md-4 col-xl-3">
                 <div className="card-sl mb-5">
                     <div className="card-image">
-                        {/* <img
-                            src={img === null ? nf : img} alt='foto' className="img-fluid"/> */}
+                        <img
+                            src={nf} alt='foto' className="img-fluid" />
                     </div>
                     <div className="card-heading">
                         Nombre
@@ -17,6 +20,7 @@ const Product = () =>{
                     </div>
                 </div>
             </div>
+        </div>
     )
 }
 
