@@ -4,18 +4,18 @@ import { useState } from "react"
 import { useParams } from "react-router-dom"
 
 const ProductSinglePage = () => {
-    const {product,setProduct} = useState({})
+    const { product , setProduct} = useState({})
     const { id } = useParams()
 
     const getProductInfo = async () => {
         const res = await axios.get(`http://localhost:4000/api/product/${id}`)
-        setProduct(res.data.product)
-        console.log(res)
+        setProduct(res.data.products)
+       
     }
 
     useEffect(()=> {
         getProductInfo()
-    })
+    },[])
     return (
         <div class="py-5">
             <div class="container px-4 px-lg-5 my-5">
