@@ -45,7 +45,7 @@ const Navmax = () => {
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Usuario</a>
                                     <ul class="dropdown-menu">
-                                        <Link to='/user' className="dropdown-item nav-link">
+                                        <Link to='/User' className="dropdown-item nav-link">
                                             Mi cuenta
                                         </Link>
                                         <Link to='/logout' className="dropdown-item nav-link">
