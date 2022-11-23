@@ -10,6 +10,7 @@ import { useContext, useState } from 'react';
 import Register from './views/Register';
 import UserContext from './context/UserContext';
 import Products from './views/Products';
+import Product from './components/Product'
 
 function App() {
   const context = useContext(UserContext)

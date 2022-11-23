@@ -18,7 +18,7 @@ const Catalogue = () => {
 
     useEffect(()=>{
         getProductos()
-    })
+    },[])
     return(
         <div className="container">
             <div className="row">
