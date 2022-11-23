@@ -23,6 +23,15 @@ const readProduct = async (req,res) => {
         res.json({success: false,message: err.message})
     }
 }
+const readProductById = async (req,res) => {
+    try{
+        const { id } = req.params
+        const products = await Product.findById(id)
+        res.json({success : true,products})
+    }catch (err) {
+        res.json({success: false,message: err.message})
+    }
+}
 
 const deleteProduct = async (req,res) => {
     try {
