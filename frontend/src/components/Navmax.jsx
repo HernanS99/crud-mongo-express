@@ -11,6 +11,10 @@ const Navmax = () => {
         { text: 'Productos', path: '/products' }
     ]
 
+    const logout = () => {
+        context.logout()
+    }
+
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-light">
@@ -48,9 +52,9 @@ const Navmax = () => {
                                         <Link to='/User' className="dropdown-item nav-link">
                                             Mi cuenta
                                         </Link>
-                                        <Link to='/logout' className="dropdown-item nav-link">
+                                        <button onClick={logout} className="dropdown-item nav-link">
                                             Cerrar Sesion
-                                        </Link>
+                                        </button>
                                     </ul>
                                 </li>
                             }
