@@ -1,5 +1,5 @@
 const Footer = () => {
-    return(
+  return (
     <div className='container-fluid'>
       <footer className="row text-center text-white">
         <div className="container pt-4 bg-secondary">
@@ -53,6 +53,6 @@ const Footer = () => {
         </div>
       </footer>
     </div>
-    )
+  )
 }
 export default Footer
