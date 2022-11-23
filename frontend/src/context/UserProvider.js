@@ -31,8 +31,11 @@ const UserProvider = ({children}) => {
                 console.log(e)
             }
         }
+        const logout = () => {
+            dispatch({type:'LOGOUT'})
+        }
     return ( 
-        <UserContext.Provider value={{userState, createAccount,login}}> {children} </UserContext.Provider>
+        <UserContext.Provider value={{userState, createAccount , login , logout}}> {children} </UserContext.Provider>
     )
 }
 

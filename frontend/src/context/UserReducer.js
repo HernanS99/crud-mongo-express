@@ -6,6 +6,8 @@ const userReducers = (state, action) => {
             return { token: payload }
         case 'LOGIN':
             return { token: payload }
+        case 'LOGOUT':
+            return { token: null }
         default:
             return state
     }
