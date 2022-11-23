@@ -9,6 +9,7 @@ import UserPage from './views/userPage';
 import { useContext, useState } from 'react';
 import Register from './views/Register';
 import UserContext from './context/UserContext';
+import Products from './views/Products';
 
 function App() {
   const context = useContext(UserContext)
@@ -20,6 +21,10 @@ function App() {
             <Route
               path='/' 
               element={<Home />}
+            />
+            <Route
+              path='/Products' 
+              element={<Products />}
             />
             
             {!token && (

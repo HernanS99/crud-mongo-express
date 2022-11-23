@@ -8,7 +8,7 @@ const Navmax = () => {
     const token = context.userState.token
     const navItemsBasic = [
         { text: 'Inicio', path: '/' },
-        { text: 'Productos', path: '/productos' }
+        { text: 'Productos', path: '/products' }
     ]
 
     return (
