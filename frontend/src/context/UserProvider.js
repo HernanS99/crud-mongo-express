@@ -31,23 +31,25 @@ const UserProvider = ({children}) => {
                 console.log(e)
             }
         }
-        const getUserInformation = async (user) => {
+        
+        const validateToken = async (token) =>{
             try{
-                const respuesta = await axios.get('http://localhost:4000/api/user/login',user)
+                const respuesta = await axios.get('http://localhost:4000/api/user/login',{headers:{Authorization:'Bearer '+token}})
                 console.log(respuesta)
                 if(respuesta.data.success){
                     navigate("/");
-                    dispatch({type: 'LOGIN', payload: respuesta.data.token})
+                    dispatch({type: 'LOGIN', payload: token})
                 }
             }catch(e){
                 console.log(e)
             }
         }
+
         const logout = () => {
             dispatch({type:'LOGOUT'})
         }
     return ( 
-        <UserContext.Provider value={{userState, createAccount , login , logout}}> {children} </UserContext.Provider>
+        <UserContext.Provider value={{userState, createAccount , login , logout, validateToken}}> {children} </UserContext.Provider>
     )
 }
 

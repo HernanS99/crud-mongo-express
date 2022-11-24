@@ -3,7 +3,6 @@ import { NavLink, Link } from 'react-router-dom'
 
 const Card = (props) => {
     const { brand, inStock, name, price, _id } = props.datos
-    console.log(_id)
     return (
         
             <div className="col-sm-6 col-md-4 col-xl-3">

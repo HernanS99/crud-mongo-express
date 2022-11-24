@@ -65,7 +65,10 @@ const login = async (req,res) => {
     }catch(err){
         res.json({success:false, mensaje:err.message})
     }
-   
 }
 
-module.exports = { createUser , readUser , editUser , deleteUser, login}
+const validateToken = (req,res) =>{
+    res.json({success:true})
+}
+
+module.exports = { createUser , readUser , editUser , deleteUser, login, validateToken}

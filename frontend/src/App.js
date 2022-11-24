@@ -6,7 +6,7 @@ import Home from './views/Home';
 import Nav from './components/Nav';
 import AdminPage from './views/AdminPage';
 import UserPage from './views/UserPage';
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Register from './views/Register';
 import UserContext from './context/UserContext';
 import Products from './views/Products';
@@ -15,6 +15,14 @@ import Product from './components/ProductSinglePage'
 function App() {
   const context = useContext(UserContext)
   const token = context.userState.token
+
+  
+  useEffect(()=>{
+    const token = localStorage.getItem('token');
+    if(token){
+      context.validateToken(token)
+    }
+  },[])
   return(
     <div>
       <Nav>

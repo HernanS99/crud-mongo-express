@@ -1,7 +1,7 @@
 const express = require('express')
 const { createCart } = require('../controllers/cartControllers')
 const { createProduct,readProduct, deleteProduct, editProduct, readProductById} = require('../controllers/productControllers')
-const { createUser, readUser, deleteUser, editUser,login} = require('../controllers/userControllers')
+const { createUser, readUser, deleteUser, editUser,login,validateToken} = require('../controllers/userControllers')
 const auth = require('../middlewares/auth')
 
 const router = express.Router()
@@ -16,6 +16,7 @@ router.route('/user/:id')
 
 router.route('/user/login')
       .post(login)
+      .get(auth , validateToken)
 
 router.route('/products')
       .post(auth, createProduct)
