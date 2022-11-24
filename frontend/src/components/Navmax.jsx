@@ -52,6 +52,11 @@ const Navmax = () => {
                                         <Link to='/User' className="dropdown-item nav-link">
                                             Mi cuenta
                                         </Link>
+                                        {/* {isAdmin &&
+                                        <Link to='/AdminPage' className="dropdown-item nav-link">
+                                            Mi cuenta
+                                        </Link>
+                                        } */}
                                         <button onClick={logout} className="dropdown-item nav-link">
                                             Cerrar Sesion
                                         </button>

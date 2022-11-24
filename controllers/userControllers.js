@@ -31,7 +31,7 @@ const readUser = async (req,res) => {
 
 const editUser = async(req,res) => {
     try{
-        const {id} = req.params
+        const id = req.auth.id
         const result = await User.findByIdAndUpdate(id, req.body, {new : true})
         res.json({success: true})
     } catch (err){

@@ -33,7 +33,7 @@ const UserProvider = ({children}) => {
         }
         const editUser = async (user) => {
             try{
-                const respuesta = await axios.post('http://localhost:4000/api/user/',user)
+                const respuesta = await axios.put('http://localhost:4000/api/user/',user)
                 console.log(respuesta)
                 if(respuesta.data.success){
                     navigate("/");
