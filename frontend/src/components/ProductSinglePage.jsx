@@ -10,7 +10,12 @@ const ProductSinglePage = () => {
     const getProductInfo = async () => {
         try{
             const res = await axios.get(`http://localhost:4000/api/product/${id}`)
-            setProduct(res.data.products)
+            if(res.data.success){
+                setProduct(res.data.products)
+            }else{
+                
+            }
+            
         }catch(e){
             console.log(e)
         }
