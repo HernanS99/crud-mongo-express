@@ -10,6 +10,8 @@ const userReducers = (state, action) => {
         case 'LOGOUT':
             localStorage.removeItem('token');
             return { token: null }
+        case 'GET':
+            return { token: payload }
         default:
             return state
     }

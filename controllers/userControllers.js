@@ -22,8 +22,8 @@ const createUser = async(req,res) => {
 
 const readUser = async (req,res) => {
     try{
-        const users = await User.find()
-        res.json({success : true,users})
+        const user = await User.findById(req.auth.id,{password:false,salt:false,_id:false})
+        res.json({success : true,user})
     }catch (err) {
         res.json({success: false,message: err.message})
     }
