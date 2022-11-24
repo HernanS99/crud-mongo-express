@@ -1,9 +1,10 @@
 import axios from "axios"
 import { useEffect } from "react"
 import { useState } from "react"
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 const ProductSinglePage = () => {
+    const navigate = useNavigate();
     const [product, setProduct] = useState({})
     const { id } = useParams()
 
@@ -13,7 +14,7 @@ const ProductSinglePage = () => {
             if(res.data.success){
                 setProduct(res.data.products)
             }else{
-                
+                navigate("/");
             }
             
         }catch(e){
