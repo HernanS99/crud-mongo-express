@@ -1,4 +1,12 @@
-const userPage = () => {
+import { useContext } from "react"
+import UserContext from "../context/UserContext"
+
+const UserPage = () => {
+    const context = useContext(UserContext)
+    const token = context.userState
+    console.log(token)
+    
+
     return (
         <div>
             <div class="container rounded bg-white mt-5 mb-5">
@@ -27,4 +35,4 @@ const userPage = () => {
     )
 }
 
-export default userPage
+export default UserPage

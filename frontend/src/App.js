@@ -5,7 +5,7 @@ import NotFound from './views/NotFound';
 import Home from './views/Home';
 import Nav from './components/Nav';
 import AdminPage from './views/AdminPage';
-import UserPage from './views/userPage';
+import UserPage from './views/UserPage';
 import { useContext, useState } from 'react';
 import Register from './views/Register';
 import UserContext from './context/UserContext';

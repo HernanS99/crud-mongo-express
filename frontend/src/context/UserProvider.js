@@ -31,6 +31,18 @@ const UserProvider = ({children}) => {
                 console.log(e)
             }
         }
+        const getUserInformation = async (user) => {
+            try{
+                const respuesta = await axios.get('http://localhost:4000/api/user/login',user)
+                console.log(respuesta)
+                if(respuesta.data.success){
+                    navigate("/");
+                    dispatch({type: 'LOGIN', payload: respuesta.data.token})
+                }
+            }catch(e){
+                console.log(e)
+            }
+        }
         const logout = () => {
             dispatch({type:'LOGOUT'})
         }

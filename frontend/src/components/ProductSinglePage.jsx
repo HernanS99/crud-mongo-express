@@ -16,11 +16,9 @@ const ProductSinglePage = () => {
             }else{
                 navigate("/");
             }
-            
         }catch(e){
             console.log(e)
         }
-        
     }
     
     useEffect(()=> {
