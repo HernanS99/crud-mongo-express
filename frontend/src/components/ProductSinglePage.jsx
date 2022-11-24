@@ -4,15 +4,19 @@ import { useState } from "react"
 import { useParams } from "react-router-dom"
 
 const ProductSinglePage = () => {
-    const { product , setProduct} = useState({})
+    const [product, setProduct] = useState({})
     const { id } = useParams()
 
     const getProductInfo = async () => {
-        const res = await axios.get(`http://localhost:4000/api/product/${id}`)
-        setProduct(res.data.products)
-       
+        try{
+            const res = await axios.get(`http://localhost:4000/api/product/${id}`)
+            setProduct(res.data.products)
+        }catch(e){
+            console.log(e)
+        }
+        
     }
-
+    
     useEffect(()=> {
         getProductInfo()
     },[])
