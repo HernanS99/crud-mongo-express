@@ -5,7 +5,7 @@ import UserContext from "../context/UserContext"
 const UserPage = () => {
     const context = useContext(UserContext)
     const { token } = context.userState
-    
+    console.log(context.userState)
     useEffect(()=>{
         context.getUserInfo(token)
     },[])
@@ -22,7 +22,7 @@ const UserPage = () => {
                                 <h4 class="text-right">Datos de usuario</h4>
                             </div>
                             <div class="row mt-2">
-                                <div class="col-md-6"><label class="labels">Nombre</label><input type="text" class="form-control" placeholder="first name"></input></div>
+                                <div class="col-md-6"><label class="labels"></label><input type="text" class="form-control" placeholder="first name"></input></div>
                                 <div class="col-md-6"><label class="labels">Apellido</label><input type="text" class="form-control" placeholder="surname"></input></div>
                             </div>
                             <div class="row mt-3">

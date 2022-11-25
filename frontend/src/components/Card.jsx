@@ -6,7 +6,7 @@ const Card = (props) => {
     return (
         
             <div className="col-sm-6 col-md-4 col-xl-3">
-                <Link to={`/products/${(_id)}`}>
+                <Link to={`/products/${(_id)}`} className="style">
                 <div className="card-sl mb-5">
                     <div className="card-image">
                         <img

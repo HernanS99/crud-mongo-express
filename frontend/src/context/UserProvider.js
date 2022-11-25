@@ -4,6 +4,7 @@ import userReducers from "./UserReducer"
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
 const UserProvider = ({children}) => {
+    let response = {}
     const navigate = useNavigate();
     const [userState, dispatch] = useReducer(userReducers,{token: null})
         const createAccount = async (user) => {
@@ -62,6 +63,7 @@ const UserProvider = ({children}) => {
                 const respuesta = await axios.get('http://localhost:4000/api/user',{headers:{Authorization:'Bearer '+token}})
                 console.log(respuesta.data.user)
                 if(respuesta.data.success){
+                    response = {...respuesta.data}
                     dispatch({type: 'GET', payload: token})
                 }
             }catch(e){
@@ -73,7 +75,7 @@ const UserProvider = ({children}) => {
             dispatch({type:'LOGOUT'})
         }
     return ( 
-        <UserContext.Provider value={{userState, createAccount , login , logout, validateToken,getUserInfo}}> {children} </UserContext.Provider>
+        <UserContext.Provider value={{userState, createAccount , login , logout, validateToken,getUserInfo,response}}> {children} </UserContext.Provider>
     )
 }
 
