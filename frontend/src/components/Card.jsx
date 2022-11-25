@@ -2,7 +2,7 @@ import nf from '../assets/img/nf.png'
 import { NavLink, Link } from 'react-router-dom'
 
 const Card = (props) => {
-    const { brand, inStock, name, price, _id } = props.datos
+    const { brand, inStock, name, price, _id,desc,imgUrl } = props.datos
     return (
         
             <div className="col-sm-6 col-md-4 col-xl-3">
@@ -10,7 +10,7 @@ const Card = (props) => {
                 <div className="card-sl mb-5">
                     <div className="card-image">
                         <img
-                            src={nf} alt='foto' className="img-fluid" />
+                            src={!imgUrl ? nf :  imgUrl} alt='foto' className="img-fluid" />
                     </div>
                     <div className="card-heading">
                         {name}
