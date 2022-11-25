@@ -17,7 +17,7 @@ router.route('/user/login')
       .get(auth , validateToken)
 
 router.route('/products')
-      .post(auth, createProduct)
+      .post(createProduct)
       .get(readProduct)
 
 router.route('/product/:id')

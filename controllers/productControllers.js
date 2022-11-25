@@ -3,10 +3,10 @@ const User = require('../models/User')
 
 const createProduct = async (req, res) => {
     try{
-        const user = await User.findById(req.auth.id)
+        /* const user = await User.findById(req.auth.id)
         if(!user.isAdmin){
             throw new Error('No estas autorizado')
-        }
+        } */
         const newProduct = new Product(req.body)
         await newProduct.save()
         res.json({success: true, mesagge: 'Producto creado',productId:newProduct._id})
