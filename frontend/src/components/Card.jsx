@@ -2,7 +2,13 @@ import nf from '../assets/img/nf.png'
 import { NavLink, Link } from 'react-router-dom'
 
 const Card = (props) => {
-    const { brand, inStock, name, price, _id,desc,imgUrl } = props.datos
+    const { brand, inStock, name, price, _id, imgUrl } = props.datos
+
+    const formatter = new Intl.NumberFormat('es-CL', {
+        style: 'currency',
+        currency: 'CLP',
+      });
+
     return (
         
             <div className="col-sm-6 col-md-4 col-xl-3">
@@ -19,7 +25,7 @@ const Card = (props) => {
                         {brand}
                     </div>
                     <div className="card-text fw-bold">
-                        ${price}
+                        {formatter.format(price)}
                     </div>
                 </div>
                 </Link>

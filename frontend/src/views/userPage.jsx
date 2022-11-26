@@ -1,11 +1,12 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useContext } from "react"
 import UserContext from "../context/UserContext"
 
 const UserPage = () => {
     const context = useContext(UserContext)
-    const { token } = context.userState
-    console.log(context.userState)
+    const { token , user  } = context.userState
+    const [userr, setUserr] = useState(user)
+
     useEffect(()=>{
         context.getUserInfo(token)
     },[])

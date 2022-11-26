@@ -37,7 +37,6 @@ const UserProvider = ({children}) => {
                 const respuesta = await axios.put('http://localhost:4000/api/user/',user)
                 console.log(respuesta)
                 if(respuesta.data.success){
-                    navigate("/");
                     dispatch({type: 'LOGIN', payload: respuesta.data.token})
                 }
             }catch(e){
@@ -50,7 +49,6 @@ const UserProvider = ({children}) => {
                 const respuesta = await axios.get('http://localhost:4000/api/user/login',{headers:{Authorization:'Bearer '+token}})
                 console.log(respuesta)
                 if(respuesta.data.success){
-                    navigate("/");
                     dispatch({type: 'LOGIN', payload: token})
                 }
             }catch(e){
@@ -64,7 +62,7 @@ const UserProvider = ({children}) => {
                 console.log(respuesta.data.user)
                 if(respuesta.data.success){
                     response = {...respuesta.data}
-                    dispatch({type: 'GET', payload: token})
+                    dispatch({type: 'GET', payload: respuesta.data.user})
                 }
             }catch(e){
                 console.log(e)

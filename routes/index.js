@@ -24,7 +24,7 @@ router.route('/product/:id')
       .get(readProductById)
       
 router.route('/products/:id')
-      .delete(auth,deleteProduct)
+      .delete(deleteProduct)
       .put(auth,editProduct)
 
 router.route('/cart')
