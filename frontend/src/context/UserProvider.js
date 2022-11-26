@@ -59,7 +59,6 @@ const UserProvider = ({children}) => {
         const getUserInfo = async (token) =>{
             try{
                 const respuesta = await axios.get('http://localhost:4000/api/user',{headers:{Authorization:'Bearer '+token}})
-                console.log(respuesta.data.user)
                 if(respuesta.data.success){
                     response = {...respuesta.data}
                     dispatch({type: 'GET', payload: respuesta.data.user})
