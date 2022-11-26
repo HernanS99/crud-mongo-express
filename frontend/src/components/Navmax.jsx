@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 import UserContext from '../context/UserContext'
@@ -6,6 +7,7 @@ import UserContext from '../context/UserContext'
 const Navmax = () => {
     const context = useContext(UserContext)
     const token = context.userState.token
+    const [userr, setUserr] = useState({...context.userState.user})
     const navItemsBasic = [
         { text: 'Inicio', path: '/' },
         { text: 'Productos', path: '/products' }
@@ -15,6 +17,8 @@ const Navmax = () => {
         context.logout()
     }
 
+    useEffect(()=>{
+    },[])
     return (
         <div>
             <nav className="navbar navbar-expand-lg bg-light">
@@ -52,11 +56,11 @@ const Navmax = () => {
                                         <Link to='/User' className="dropdown-item nav-link">
                                             Mi cuenta
                                         </Link>
-                                        {/* {isAdmin &&
-                                        <Link to='/AdminPage' className="dropdown-item nav-link">
-                                            Mi cuenta
+                                        {userr.isAdmin &&
+                                        <Link to='/admin' className="dropdown-item nav-link">
+                                            Pagina de Admin
                                         </Link>
-                                        } */}
+                                        }
                                         <button onClick={logout} className="dropdown-item nav-link">
                                             Cerrar Sesion
                                         </button>

@@ -15,10 +15,8 @@ const UserPage = () => {
         }
         )
     }
-    console.log(userr)
-    useEffect(()=>{
-        context.getUserInfo(token)
-        
+    
+    useEffect(()=>{        
     },[])
     return (
         <div>
@@ -33,7 +31,7 @@ const UserPage = () => {
                                 <h4 class="text-right">Datos de usuario</h4>
                             </div>
                             <div class="row mt-2">
-                                <div class="col-md-6"><label class="labels">Nombre</label><input type="input" class="form-control" placeholder="Nombre" value={userr.nombre} onChange={(evento) => handleInput(evento)}></input></div>
+                                <div class="col-md-6"><label class="labels">Nombre</label><input type="text" class="form-control" placeholder="Nombre" value={userr.nombre} onChange={(evento) => handleInput(evento)}></input></div>
                                 <div class="col-md-6"><label class="labels">Apellido</label><input type="text" class="form-control" placeholder="Apellido" value={userr.apellido} onChange={(evento) => handleInput(evento)}></input></div>
                             </div>
                             <div class="row mt-3">

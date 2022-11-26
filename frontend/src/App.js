@@ -22,6 +22,7 @@ function App() {
     if(token){
       context.validateToken(token)
     }
+    context.getUserInfo(token)
   },[])
   return(
     <div>
@@ -32,35 +33,35 @@ function App() {
               element={<Home />}
             />
             <Route
-              path='/Products' 
+              path='/products' 
               element={<Products />}
             />
             <Route
-              path='/Products/:id' 
+              path='/products/:id' 
               element={<Product />}
             />
             
             {!token && (
               <Route
-              path='/Register'
+              path='/register'
               element={<Register />}
             />
             )}
             {!token && (
               <Route
-              path='/Login'
+              path='/login'
               element={<Login />}
             />
             )}
             {token && (
               <Route
-              path='/User'
+              path='/user'
               element={<UserPage />}
             />
             )}
             
             <Route
-              path='/Admin'
+              path='/admin'
               element={<AdminPage />}
             />
             <Route 
