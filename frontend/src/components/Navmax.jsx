@@ -16,7 +16,7 @@ const Navmax = () => {
     const logout = () => {
         context.logout()
     }
-
+    
     useEffect(()=>{
     },[])
     return (

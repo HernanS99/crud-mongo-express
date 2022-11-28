@@ -3,6 +3,7 @@ import { useContext } from "react"
 import UserContext from "../context/UserContext"
 
 const UserPage = () => {
+    
     const context = useContext(UserContext)
     const { token , user  } = context.userState
     const [userr, setUserr] = useState({...context.userState.user})

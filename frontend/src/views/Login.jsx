@@ -16,12 +16,13 @@ const Login = () => {
         })
     }
 
-    const signin = () => {
-        state.login(user)
+    const signin = async () => {
+            state.login(user)
     }
 
         return (
             <section className="vh-100 gradient-custom">
+                
                 <div className="container py-5 h-100">
                     <div className="row d-flex justify-content-center align-items-center h-100">
                         <div className="col-12 col-md-8 col-lg-6 col-xl-5">
@@ -44,7 +45,7 @@ const Login = () => {
                                         <button className="btn btn-outline-light btn-lg px-5" type="button"  onClick={signin} >Login</button>
                                     </div> 
                                      <div>
-                                        <p className="mb-0">No tienes una cuenta? <Link to="/Register">Registrarse</Link>
+                                        <p className="mb-0">No tienes una cuenta? <Link to="/register">Registrarse</Link>
                                         </p>
                                     </div> 
 
