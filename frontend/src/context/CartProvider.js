@@ -4,9 +4,9 @@ import cartReducers from "./CartReducer"
 
 
 const CartProvider = ({children}) => {
-    const [cartState, dispatch] = useReducer(cartReducers,{cart: null})
+    const [cartState, dispatch] = useReducer(cartReducers,{cart: []})
        const addToCart = (id) =>{
-        console.log(id)
+        dispatch({type: 'ADD', payload : id})
        }
     return (
         <CartContext.Provider value={{cartState, addToCart}}> {children} </CartContext.Provider>

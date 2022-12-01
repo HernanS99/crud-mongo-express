@@ -3,7 +3,7 @@ const CartReducers = (state, action) => {
 
     switch (type) {
         case 'ADD':
-            return {token: payload }
+            return {cart:state.cart.push({id: payload, qty: 1})}
         default:
             return state
     }
