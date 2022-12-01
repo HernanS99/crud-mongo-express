@@ -10,8 +10,6 @@ const cartReducers = (state, action) => {
   
     switch (type) {
       case 'ADD':
-        console.log(state.cart)
-        console.log(payload.item)
         if (state.cart.some((el) => el._id === payload.item._id)) {
           state.cart.forEach((el) => {
             if (el._id === payload.item._id) {

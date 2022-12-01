@@ -18,7 +18,7 @@ const Navmax = () => {
     const logout = () => {
         context.logout()
     }
-    console.log(cartContext.cartState.cart.lenght)
+    console.log(cartContext.cartState.qty)
     useEffect(()=>{
     },[])
     return (
@@ -76,7 +76,7 @@ const Navmax = () => {
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
                             Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">{cartContext.cartState.cart.lenght}</span>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">{cartContext.cartState.qty}</span>
                         </button>
                     </form> 
                 </div>
