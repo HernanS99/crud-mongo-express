@@ -1,4 +1,7 @@
 const ProductBox = ({ item }) => {
+
+    const { name, imageUrl, qty, _id, price } = item.datos
+    console.log(name)
     return (
         <div className="card rounded-3 mb-4">
                             <div className="card-body p-4">
@@ -9,8 +12,7 @@ const ProductBox = ({ item }) => {
                                             className="img-fluid rounded-3" alt="Cotton T-shirt"></img>
                                     </div>
                                     <div className="col-md-3 col-lg-3 col-xl-3">
-                                        <p className="lead fw-normal mb-2">Basic T-shirt</p>
-                                        <p><span className="text-muted">Size: </span>M <span className="text-muted">Color: </span>Grey</p>
+                                        <p className="lead fw-normal mb-2">{name}</p>
                                     </div>
                                     <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
                                         <button className="btn btn-link px-2"
@@ -27,7 +29,7 @@ const ProductBox = ({ item }) => {
                                         </button>
                                     </div>
                                     <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                        <h5 className="mb-0">$499.00</h5>
+                                        <h5 className="mb-0">{price}</h5>
                                     </div>
                                     <div className="col-md-1 col-lg-1 col-xl-1 text-end">
                                         <a href="#!" className="text-danger"><i className="fas fa-trash fa-lg"></i></a>
