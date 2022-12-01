@@ -37,9 +37,9 @@ const Navmax = () => {
                                 </li>
                             ))}
                             {!token &&
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Usuario</a>
-                                    <ul class="dropdown-menu">
+                                <li className="nav-item dropdown">
+                                    <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Usuario</a>
+                                    <ul className="dropdown-menu">
                                         <Link to='/login' className="dropdown-item nav-link">
                                             Iniciar Sesion
                                         </Link>
@@ -50,13 +50,13 @@ const Navmax = () => {
                                 </li>
                             }
                             {token &&
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Usuario</a>
-                                    <ul class="dropdown-menu">
+                                <li className="nav-item dropdown">
+                                    <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Usuario</a>
+                                    <ul className="dropdown-menu">
                                         <Link to='/User' className="dropdown-item nav-link">
                                             Mi cuenta
                                         </Link>
-                                        {userr.isAdmin &&
+                                        {context.userState.user?.isAdmin &&
                                         <Link to='/admin' className="dropdown-item nav-link">
                                             Pagina de Admin
                                         </Link>
