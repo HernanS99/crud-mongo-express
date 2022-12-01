@@ -1,19 +1,15 @@
-import UserContext from "./UserContext"
+import CartContext from "./CartContext"
 import { useReducer } from "react"
-import CartReducers from "./UserReducer"
-import axios from 'axios'
-import { useNavigate } from "react-router-dom";
+import cartReducers from "./CartReducer"
 
 
 const CartProvider = ({children}) => {
-    let response = {}
-    const navigate = useNavigate();
-    const [CartState, dispatch] = useReducer(CartReducers,{cart: null})
-       addToCart = (id) =>{
+    const [cartState, dispatch] = useReducer(cartReducers,{cart: null})
+       const addToCart = (id) =>{
         console.log(id)
        }
     return (
-        <CartContext.Provider value={{addToCart}}> {children} </CartContext.Provider>
+        <CartContext.Provider value={{cartState, addToCart}}> {children} </CartContext.Provider>
     )
 }
 

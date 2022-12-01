@@ -34,7 +34,7 @@ const Card = (props) => {
                 </div>
                 </Link>
                 <div className="card-text fw-bold mb-3 d-grid gap-2">
-                        <button className="btn btn-primary" onClick={context.addToCart(_id)} disabled={stock > 0 ? false : true}>Agregar al carro</button>
+                        <button className="btn btn-primary" onClick={()=>context.addToCart(_id)} disabled={stock > 0 ? false : true}>Agregar al carro</button>
                 </div>
             </div>
     )
