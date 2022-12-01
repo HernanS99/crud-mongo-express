@@ -18,7 +18,7 @@ const Navmax = () => {
     const logout = () => {
         context.logout()
     }
-    console.log(cartContext.cartState.qty)
+    console.log(cartContext.cartState)
     useEffect(()=>{
     },[])
     return (
