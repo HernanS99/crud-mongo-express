@@ -1,16 +1,16 @@
 import nf from '../assets/img/nf.png'
 import { NavLink, Link } from 'react-router-dom'
+import { useContext } from 'react'
+import CartContext from '../context/CartContext'
 
 const Card = (props) => {
+    const context = useContext(CartContext)
+
     const { brand, inStock, name, price, _id, imgUrl,stock } = props.datos
     const formatter = new Intl.NumberFormat('es-CL', {
         style: 'currency',
         currency: 'CLP',
       });
-      
-    const addToCart = () =>{
-        console.log(_id)
-    }
 
     return (
         
@@ -34,7 +34,7 @@ const Card = (props) => {
                 </div>
                 </Link>
                 <div className="card-text fw-bold mb-3 d-grid gap-2">
-                        <button className="btn btn-primary" onClick={addToCart} disabled={stock > 0 ? false : true}>Agregar al carro</button>
+                        <button className="btn btn-primary" onClick={context.addToCart(_id)} disabled={stock > 0 ? false : true}>Agregar al carro</button>
                 </div>
             </div>
     )

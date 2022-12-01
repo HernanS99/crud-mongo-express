@@ -9,9 +9,11 @@ const CartProvider = ({children}) => {
     let response = {}
     const navigate = useNavigate();
     const [CartState, dispatch] = useReducer(CartReducers,{cart: null})
-       
-    return ( 
-        <CartContext.Provider value={{}}> {children} </CartContext.Provider>
+       addToCart = (id) =>{
+        console.log(id)
+       }
+    return (
+        <CartContext.Provider value={{addToCart}}> {children} </CartContext.Provider>
     )
 }
 
