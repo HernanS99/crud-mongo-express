@@ -1,11 +1,13 @@
 import { useEffect, useState } from 'react'
 import { useContext } from 'react'
 import { NavLink, Link } from 'react-router-dom'
+import CartContext from '../context/CartContext'
 import UserContext from '../context/UserContext'
 
 
 const Navmax = () => {
     const context = useContext(UserContext)
+    const cartContext = useContext(CartContext)
     const token = context.userState.token
     const [userr, setUserr] = useState({...context.userState.user})
     const navItemsBasic = [
@@ -16,7 +18,7 @@ const Navmax = () => {
     const logout = () => {
         context.logout()
     }
-    
+    console.log(cartContext.cartState.cart.lenght)
     useEffect(()=>{
     },[])
     return (
@@ -74,7 +76,7 @@ const Navmax = () => {
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
                             Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+                            <span class="badge bg-dark text-white ms-1 rounded-pill">{cartContext.cartState.cart.lenght}</span>
                         </button>
                     </form> 
                 </div>
