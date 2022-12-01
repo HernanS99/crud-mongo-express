@@ -72,6 +72,7 @@ const Navmax = () => {
                         </ul>
 
                     </div>
+                    <Link to='/cart'>
                     <form class="d-flex">
                         <button class="btn btn-outline-dark" type="submit">
                             <i class="bi-cart-fill me-1"></i>
@@ -79,6 +80,7 @@ const Navmax = () => {
                             <span class="badge bg-dark text-white ms-1 rounded-pill">{cartContext.cartState.qty}</span>
                         </button>
                     </form> 
+                    </Link>
                 </div>
             </nav>
         </div>
