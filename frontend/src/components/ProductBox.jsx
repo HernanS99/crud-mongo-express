@@ -1,6 +1,13 @@
 const ProductBox = ({ item }) => {
 
-    const { name, imageUrl, qty, _id, price } = item.datos
+    const { name, imgUrl, qty, _id, price } = item.datos
+
+
+    const formatter = new Intl.NumberFormat('es-CL', {
+        style: 'currency',
+        currency: 'CLP',
+      });
+
     console.log(name)
     return (
         <div className="card rounded-3 mb-4">
@@ -8,7 +15,7 @@ const ProductBox = ({ item }) => {
                                 <div className="row d-flex justify-content-between align-items-center">
                                     <div className="col-md-2 col-lg-2 col-xl-2">
                                         <img
-                                            src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-shopping-carts/img1.webp"
+                                            src={imgUrl}
                                             className="img-fluid rounded-3" alt="Cotton T-shirt"></img>
                                     </div>
                                     <div className="col-md-3 col-lg-3 col-xl-3">
@@ -20,7 +27,7 @@ const ProductBox = ({ item }) => {
                                             <i className="fas fa-minus"></i>
                                         </button>
 
-                                        <input id="form1" min="0" name="quantity" value="2" type="number"
+                                        <input id="form1" min="0" name="quantity" defaultValue={item.qty} type="number"
                                             className="form-control form-control-sm" />
 
                                         <button className="btn btn-link px-2"
@@ -29,7 +36,7 @@ const ProductBox = ({ item }) => {
                                         </button>
                                     </div>
                                     <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                                        <h5 className="mb-0">{price}</h5>
+                                        <h5 className="mb-0">{formatter.format(item.qty * price)}</h5>
                                     </div>
                                     <div className="col-md-1 col-lg-1 col-xl-1 text-end">
                                         <a href="#!" className="text-danger"><i className="fas fa-trash fa-lg"></i></a>
