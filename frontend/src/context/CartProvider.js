@@ -12,10 +12,12 @@ const CartProvider = ({ children }) => {
   const deleteFromCart = (id) => {
     dispatch({ type: 'DELETE', payload: id })
   }
+  const cleanCart = () => {
+    dispatch({ type: 'CLEAN' })
+  }
 
-  
 
-  return <CartContext.Provider value={{ cartState, addToCart, deleteFromCart }}>{children}</CartContext.Provider>
+  return <CartContext.Provider value={{ cartState, addToCart, deleteFromCart,cleanCart }}>{children}</CartContext.Provider>
 }
 
 export default CartProvider
