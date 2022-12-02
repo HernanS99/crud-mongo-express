@@ -25,7 +25,7 @@ const Navmax = () => {
         <div>
             <nav className="navbar navbar-expand-lg bg-light">
                 <div className="container">
-                    <img className="navbar-brand" src={hw} width="50" height="54" alt="" />hardware.exe
+                    <img className="navbar-brand" src={hw} width="50" height="54" alt="" />Hardware.exe
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

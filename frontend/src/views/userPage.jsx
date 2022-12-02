@@ -16,7 +16,9 @@ const UserPage = () => {
         }
         )
     }
-    console.log(userr)
+    const editUser = () =>{
+
+    }
     useEffect(()=>{        
     },[])
     return (
@@ -33,12 +35,12 @@ const UserPage = () => {
                             </div>
                             <div class="row mt-2">
                                 <div class="col-md-6"><label class="labels">Nombre</label><input name="nombre" type="text" class="form-control" placeholder="Nombre" defaultValue={userr.nombre} onChange={(evento) => handleInput(evento)}></input></div>
-                                <div class="col-md-6"><label class="labels">Apellido</label><input type="text" class="form-control" placeholder="Apellido" value={userr.apellido} onChange={(evento) => handleInput(evento)}></input></div>
+                                <div class="col-md-6"><label class="labels">Apellido</label><input type="text" class="form-control" placeholder="Apellido" defaultValue={userr.apellido} onChange={(evento) => handleInput(evento)}></input></div>
                             </div>
                             <div class="row mt-3">
-                                <div class="col-md-12"><label class="labels">Edad</label><input type="text" class="form-control" placeholder="Edad" value={userr.edad} onChange={(evento) => handleInput(evento)}></input></div>
-                                <div class="col-md-12"><label class="labels">Correo</label><input type="text" class="form-control" placeholder="correo" value={userr.correo} onChange={(evento) => handleInput(evento)}></input></div>                            </div>
-                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div>
+                                <div class="col-md-12"><label class="labels">Edad</label><input type="text" class="form-control" placeholder="Edad" defaultValue={userr.edad} onChange={(evento) => handleInput(evento)}></input></div>
+                                <div class="col-md-12"><label class="labels">Correo</label><input type="text" class="form-control" placeholder="correo" defaultValue={userr.correo} onChange={(evento) => handleInput(evento)}></input></div>                            </div>
+                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" onClick={editUser}>Save Profile</button></div>
                         </div>
                     </div>
                 </div>
