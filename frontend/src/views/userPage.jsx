@@ -41,7 +41,7 @@ const UserPage = () => {
                             <div class="row mt-3">
                                 <div class="col-md-12"><label class="labels">Edad</label><input name="edad" type="text" class="form-control" placeholder="Edad" defaultValue={userr.edad} onChange={(evento) => handleInput(evento)}></input></div>
                                 <div class="col-md-12"><label class="labels">Correo</label><input name="correo" type="text" class="form-control" placeholder="correo" defaultValue={userr.correo} onChange={(evento) => handleInput(evento)}></input></div>                            </div>
-                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" onClick={editUser}>Save Profile</button></div>
+                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button" onClick={editUser}>Editar informacion</button></div>
                         </div>
                     </div>
                 </div>

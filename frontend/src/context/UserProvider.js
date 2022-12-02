@@ -3,7 +3,8 @@ import { useReducer } from "react"
 import userReducers from "./UserReducer"
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
-import toast from "react-hot-toast";
+import Swal from 'sweetalert2'
+
 const UserProvider = ({children}) => {
     let response = {}
     const navigate = useNavigate();
@@ -42,6 +43,12 @@ const UserProvider = ({children}) => {
                     navigate("/");
                     dispatch({type: 'LOGIN', payload: respuesta.data.token})
                     getUserInfo(respuesta.data.token)
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Do you want to continue',
+                        icon: 'error',
+                        confirmButtonText: 'Cool'
+                      })
                 }
             }catch(e){
                 console.log(e)
