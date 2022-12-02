@@ -7,13 +7,15 @@ const cartReducers = (state, action) => {
       }, 0)
       return qty
     }
-  
+    
     switch (type) {
       case 'ADD':
-        if (state.cart.some((el) => el._id === payload.item._id)) {
+        const validation = state.cart.some((el) => el._id === payload.item._id)
+        if (validation) {
           state.cart.forEach((el) => {
             if (el._id === payload.item._id) {
-              el.qty = payload.qty
+                
+                el.qty = payload.qty
             }
           })
         } else {

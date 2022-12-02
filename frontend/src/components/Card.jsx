@@ -3,10 +3,10 @@ import { NavLink, Link } from 'react-router-dom'
 import { useContext, useState } from 'react'
 import CartContext from '../context/CartContext'
 
-const Card = (item) => {
+const Card = ({datos}) => {
     const context = useContext(CartContext)
     const [qty, setQty] = useState(1)
-    const { brand, inStock, name, price, _id, imgUrl, stock } = item.datos
+    const { brand, inStock, name, price, _id, imgUrl, stock } = datos
     const formatter = new Intl.NumberFormat('es-CL', {
         style: 'currency',
         currency: 'CLP',
@@ -58,7 +58,7 @@ const Card = (item) => {
                 </div>
             )}
             <div className="card-text fw-bold mb-3 d-grid gap-2">
-                <button className="btn btn-primary" onClick={() => context.addToCart(item, qty)} disabled={stock > 0 ? false : true}>Agregar al carro</button>
+                <button className="btn btn-primary" onClick={() => context.addToCart(datos, qty)} disabled={stock > 0 ? false : true}>Agregar al carro</button>
             </div>
         </div>
     )

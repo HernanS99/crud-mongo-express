@@ -8,6 +8,19 @@ const UserProvider = ({children}) => {
     let response = {}
     const navigate = useNavigate();
     const [userState, dispatch] = useReducer(userReducers,{token: null})
+
+    const getUserInfo = async (token) =>{
+        try{
+            const respuesta = await axios.get('http://localhost:4000/api/user',{headers:{Authorization:'Bearer '+token}})
+            if(respuesta.data.success){
+                response = {...respuesta.data}
+                dispatch({type: 'GET', payload: respuesta.data.user})
+            }
+        }catch(e){
+            console.log(e)
+        }
+    }
+    
         const createAccount = async (user) => {
             try{
                 const respuesta = await axios.post('http://localhost:4000/api/user',user)
@@ -28,6 +41,7 @@ const UserProvider = ({children}) => {
                 if(respuesta.data.success){
                     navigate("/");
                     dispatch({type: 'LOGIN', payload: respuesta.data.token})
+                    getUserInfo(respuesta.data.token)
                 }
             }catch(e){
                 console.log(e)
@@ -57,17 +71,7 @@ const UserProvider = ({children}) => {
             }
         }
 
-        const getUserInfo = async (token) =>{
-            try{
-                const respuesta = await axios.get('http://localhost:4000/api/user',{headers:{Authorization:'Bearer '+token}})
-                if(respuesta.data.success){
-                    response = {...respuesta.data}
-                    dispatch({type: 'GET', payload: respuesta.data.user})
-                }
-            }catch(e){
-                console.log(e)
-            }
-        }
+       
 
         const logout = () => {
             dispatch({type:'LOGOUT'})

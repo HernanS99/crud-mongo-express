@@ -16,14 +16,14 @@ import Cart from './views/Cart'
 function App() {
   const context = useContext(UserContext)
   const token = context.userState.token
-
+  console.log()
 
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
       context.validateToken(token)
+      context.getUserInfo(token)
     }
-    context.getUserInfo(token)
   }, [])
   return (
     <div>
@@ -60,11 +60,13 @@ function App() {
               element={<UserPage />}
             />
           )}
-
-          <Route
+          {context.userState.user?.isAdmin &&
+            <Route
             path='/admin'
             element={<AdminPage />}
           />
+          }
+          
           <Route
             path='/Cart'
             element={<Cart />}

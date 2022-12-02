@@ -1,14 +1,9 @@
 const ProductBox = ({ item }) => {
-
-    const { name, imgUrl, qty, _id, price } = item.datos
-
-
+    const { name, imgUrl, qty, _id, price } = item
     const formatter = new Intl.NumberFormat('es-CL', {
         style: 'currency',
         currency: 'CLP',
       });
-
-    console.log(name)
     return (
         <div className="card rounded-3 mb-4">
                             <div className="card-body p-4">
@@ -22,18 +17,18 @@ const ProductBox = ({ item }) => {
                                         <p className="lead fw-normal mb-2">{name}</p>
                                     </div>
                                     <div className="col-md-3 col-lg-3 col-xl-2 d-flex">
-                                        <button className="btn btn-link px-2"
+                                        {/* <button className="btn btn-link px-2"
                                             onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                                             <i className="fas fa-minus"></i>
-                                        </button>
+                                        </button> */}
 
                                         <input id="form1" min="0" name="quantity" defaultValue={item.qty} type="number"
                                             className="form-control form-control-sm" />
 
-                                        <button className="btn btn-link px-2"
-                                            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                                        {/* <button className="btn btn-link px-2"
+                                            onClick="this.parentNode.querySelector('input[type=number]').stepUp()">
                                             <i className="fas fa-plus"></i>
-                                        </button>
+                                        </button> */}
                                     </div>
                                     <div className="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
                                         <h5 className="mb-0">{formatter.format(item.qty * price)}</h5>
@@ -46,5 +41,4 @@ const ProductBox = ({ item }) => {
                         </div>
     )
 }
-
 export default ProductBox
