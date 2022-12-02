@@ -13,6 +13,8 @@ const CartProvider = ({ children }) => {
     dispatch({ type: 'DELETE', payload: id })
   }
 
+  
+
   return <CartContext.Provider value={{ cartState, addToCart, deleteFromCart }}>{children}</CartContext.Provider>
 }
 

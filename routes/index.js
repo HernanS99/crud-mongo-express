@@ -1,6 +1,6 @@
 const express = require('express')
 const { createCart } = require('../controllers/cartControllers')
-const { createProduct,readProduct, deleteProduct, editProduct, readProductById} = require('../controllers/productControllers')
+const { createProduct,readProduct, deleteProduct, editProduct, readProductById,reducirStock} = require('../controllers/productControllers')
 const { createUser, readUser, deleteUser, editUser,login,validateToken} = require('../controllers/userControllers')
 const auth = require('../middlewares/auth')
 
@@ -19,6 +19,7 @@ router.route('/user/login')
 router.route('/products')
       .post(createProduct)
       .get(readProduct)
+      .put(reducirStock)
 
 router.route('/product/:id')
       .get(readProductById)

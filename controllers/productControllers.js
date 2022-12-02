@@ -56,5 +56,17 @@ const editProduct = async(req,res) => {
     }
 }
 
+const reducirStock = async (req,res) => {
+    const products = req.body.cart
+    console.log(req.body)
+    try{
+        products.map(async (product)=> {
+            await Product.findByIdAndUpdate(product._id, {stock: product.stock - product.qty},{new: true})
+            res.json({success: true})
+        })
+    }catch(e){
+        res.json({success: false, error : e.mesagge})
+    }
+}
 
-module.exports = {createProduct,readProduct,deleteProduct,editProduct,readProductById}
+module.exports = {createProduct,readProduct,deleteProduct,editProduct,readProductById,reducirStock}
