@@ -29,7 +29,21 @@ const UserProvider = ({children}) => {
                 if(respuesta.data.sucess){
                     navigate("/");
                     dispatch({type: 'REGISTER', payload: respuesta.data.token})
-                    
+                    Swal.fire({
+                        position: 'bottom-end',
+                        icon: 'success',
+                        title: 'Registro exitoso',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }else{
+                    Swal.fire({
+                        position: 'bottom-end',
+                        icon: 'error',
+                        title: 'Ingresar todos los datos correctamente y vuelva a intentar',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
                 }
             }catch(e){
                 console.log(e)
@@ -44,14 +58,23 @@ const UserProvider = ({children}) => {
                     dispatch({type: 'LOGIN', payload: respuesta.data.token})
                     getUserInfo(respuesta.data.token)
                     Swal.fire({
-                        title: 'Error!',
-                        text: 'Do you want to continue',
+                        position: 'bottom-end',
+                        icon: 'success',
+                        title: 'Inicio de sesión exitoso',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
+                }else{
+                    Swal.fire({
+                        position: 'bottom-end',
                         icon: 'error',
-                        confirmButtonText: 'Cool'
+                        title: 'Inicio de sesión fallido, favor ingresar datos correctamente',
+                        showConfirmButton: false,
+                        timer: 1500
                       })
                 }
             }catch(e){
-                console.log(e)
+                console.log(e) 
             }
         }
         const editUser = async (user,token) => {
@@ -82,6 +105,13 @@ const UserProvider = ({children}) => {
 
         const logout = () => {
             dispatch({type:'LOGOUT'})
+            Swal.fire({
+                position: 'bottom-end',
+                icon: 'success',
+                title: 'Sesión cerrada exitosamente',
+                showConfirmButton: false,
+                timer: 1500
+              })
         }
     return ( 
         <UserContext.Provider value={{userState, createAccount , login , logout, validateToken,getUserInfo,response,editUser}}> {children} </UserContext.Provider>
