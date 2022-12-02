@@ -28,6 +28,18 @@ const ProductSinglePage = () => {
         currency: 'CLP',
       });
 
+      const reducir = () => {
+        if (qty >= 2) {
+            setQty(qty - 1)
+        }
+    }
+
+    const aumentar = () => {
+        if (qty < product.stock) {
+            setQty(qty + 1)
+        }
+    }
+
     useEffect(()=> {
         getProductInfo()
     },[])
@@ -43,7 +55,11 @@ const ProductSinglePage = () => {
                         </div>
                         <p class="lead">{product.desc}</p>
                         <div class="d-flex">
-                            <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" />
+                        <button className="btn btn-light" onClick={reducir} disabled={qty === 1}><i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span className="my-2 text-center">{qty}</span>
+                            <button className="btn btn-light" onClick={aumentar} disabled={qty === product.stock}><i class="fa-solid fa-plus"></i>
+                    </button>
                             <button class="btn btn-outline-dark flex-shrink-0" type="button" onClick={() => context.addToCart(product, qty)}>
                                 <i class="bi-cart-fill me-1"></i>
                                 Add to cart
