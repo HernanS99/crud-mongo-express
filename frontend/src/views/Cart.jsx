@@ -3,6 +3,7 @@ import CartContext from '../context/CartContext'
 import UserContext from '../context/UserContext'
 import { Link } from 'react-router-dom'
 import ProductBox from '../components/ProductBox'
+import { PayPalButtons } from "@paypal/react-paypal-js";
 
 const Cart = () => {
     const context = useContext(CartContext)
@@ -23,9 +24,25 @@ const Cart = () => {
                          ))}
                         
                         <div className="card">
-                            <div className="card-body">
-                                <button type="button" className="btn btn-warning btn-block btn-lg">Pagar</button>
-                            </div>
+                        <PayPalButtons
+                createOrder={(data, actions) => {
+                    return actions.order.create({
+                        purchase_units: [
+                            {
+                                amount: {
+                                    value: "1.99",
+                                },
+                            },
+                        ],
+                    });
+                }}
+                onApprove={(data, actions) => {
+                    return actions.order.capture().then((details) => {
+                        const name = details.payer.name.given_name;
+                        alert(`Transaction completed by ${name}`);
+                    });
+                }}
+            />
                         </div>
 
                     </div>
