@@ -12,6 +12,8 @@ const userReducers = (state, action) => {
             return {
                 user:{},
                 token: null }
+        case 'EDIT':
+            return {token: payload }
         case 'GET':
             return {
                 ...state,

@@ -82,7 +82,14 @@ const UserProvider = ({children}) => {
                 const respuesta = await axios.put('http://localhost:4000/api/user/',user,{headers:{Authorization:'Bearer '+token}})
                 console.log(respuesta)
                 if(respuesta.data.success){
-                    dispatch({type: 'LOGIN', payload: respuesta.data.token})
+                    dispatch({type: 'EDIT'})
+                    Swal.fire({
+                        position: 'bottom-end',
+                        icon: 'success',
+                        title: 'Usuario editado exitosamente',
+                        showConfirmButton: false,
+                        timer: 1500
+                      })
                 }
             }catch(e){
                 console.log(e)
