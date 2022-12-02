@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import CartContext from "../context/CartContext";
+
 const ProductBox = ({ item }) => {
+    const context = useContext(CartContext)
     const { name, imgUrl, qty, _id, price } = item
     const formatter = new Intl.NumberFormat('es-CL', {
         style: 'currency',
@@ -34,7 +38,7 @@ const ProductBox = ({ item }) => {
                                         <h5 className="mb-0">{formatter.format(item.qty * price)}</h5>
                                     </div>
                                     <div className="col-md-1 col-lg-1 col-xl-1 text-end">
-                                        <a href="#!" className="text-danger"><i className="fas fa-trash fa-lg"></i></a>
+                                        <button onClick={() => context.deleteFromCart(_id)} className="btn btn-danger"><i className="fas fa-trash fa-lg"></i></button>
                                     </div>
                                 </div>
                             </div>
