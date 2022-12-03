@@ -45,7 +45,7 @@ const Login = () => {
                                         <button className="btn btn-outline-light btn-lg px-5" type="button"  onClick={signin} >Login</button>
                                     </div> 
                                      <div>
-                                        <p className="mb-0">No tienes una cuenta? <Link to="/register">Registrarse</Link>
+                                        <p className="mb-0">No tienes una cuenta? <Link to="/register" className='styleRegister'>Registrarse</Link>
                                         </p>
                                     </div> 
 

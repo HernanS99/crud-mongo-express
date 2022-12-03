@@ -44,3 +44,10 @@
   background-color: unset;
   color: black;
 }
+
+.styleRegister {
+  text-decoration: none;
+  background-color: unset;
+  color:white;
+  font-weight: bold;
+}

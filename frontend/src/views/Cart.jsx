@@ -6,6 +6,7 @@ import ProductBox from '../components/ProductBox'
 import { PayPalButtons } from "@paypal/react-paypal-js";
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import Swal from 'sweetalert2'
 
 const Cart = () => {
     const navigate = useNavigate()
@@ -35,8 +36,7 @@ const Cart = () => {
                         {cart.map((el) => (
                             <ProductBox item={el} key={el._id} />
                         ))}
-
-                        <div className="card text-center pt-3">
+                        {cart.lenght ? (<div className="card text-center pt-3">
                             <PayPalButtons
                                 createOrder={(data, actions) => {
                                     return actions.order.create({
@@ -52,14 +52,21 @@ const Cart = () => {
                                 onApprove={(data, actions) => {
                                     return actions.order.capture().then((details) => {
                                         const name = details.payer.name.given_name;
-                                        alert(`Transaction completed by ${name}`);
+                                        Swal.fire({
+                                            position: 'bottom-end',
+                                            icon: 'success',
+                                            title: 'Transaccion exitosa',
+                                            showConfirmButton: false,
+                                            timer: 1500
+                                          })
                                         context.cleanCart()
                                         reducirStock()
                                         navigate('/')
                                     });
                                 }}
                             />
-                        </div>
+                        </div>): null}
+                        
 
                     </div>
                 </div>
