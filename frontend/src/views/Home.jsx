@@ -7,7 +7,6 @@ import UserContext from "../context/UserContext"
 
 const Home = () => {
     const state = useContext(UserContext)
-    console.log(state)
     return(
         <div>
             <Hero />

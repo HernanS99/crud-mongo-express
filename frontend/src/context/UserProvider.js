@@ -25,7 +25,6 @@ const UserProvider = ({children}) => {
         const createAccount = async (user) => {
             try{
                 const respuesta = await axios.post('http://localhost:4000/api/user',user)
-                console.log(respuesta)
                 if(respuesta.data.sucess){
                     navigate("/");
                     dispatch({type: 'REGISTER', payload: respuesta.data.token})
@@ -52,7 +51,6 @@ const UserProvider = ({children}) => {
         const login = async (user) => {
             try{
                 const respuesta = await axios.post('http://localhost:4000/api/user/login',user)
-                console.log(respuesta)
                 if(respuesta.data.success){
                     navigate("/");
                     dispatch({type: 'LOGIN', payload: respuesta.data.token})
@@ -68,7 +66,7 @@ const UserProvider = ({children}) => {
                     Swal.fire({
                         position: 'bottom-end',
                         icon: 'error',
-                        title: 'Inicio de sesión fallido, favor ingresar datos correctamente',
+                        title: 'Inicio de sesión fallido. Por favor ingresar datos correctamente',
                         showConfirmButton: false,
                         timer: 1500
                       })
@@ -80,7 +78,6 @@ const UserProvider = ({children}) => {
         const editUser = async (user,token) => {
             try{
                 const respuesta = await axios.put('http://localhost:4000/api/user/',user,{headers:{Authorization:'Bearer '+token}})
-                console.log(respuesta)
                 if(respuesta.data.success){
                     dispatch({type: 'EDIT'})
                     Swal.fire({
@@ -99,7 +96,6 @@ const UserProvider = ({children}) => {
         const validateToken = async (token) =>{
             try{
                 const respuesta = await axios.get('http://localhost:4000/api/user/login',{headers:{Authorization:'Bearer '+token}})
-                console.log(respuesta)
                 if(respuesta.data.success){
                     dispatch({type: 'LOGIN', payload: token})
                 }

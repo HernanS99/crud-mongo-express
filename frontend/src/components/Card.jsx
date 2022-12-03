@@ -46,10 +46,10 @@ const Card = ({datos}) => {
             </Link>
             {stock ? (
                 <div className="d-flex">
-                    <button className="btn btn-light" onClick={reducir} disabled={qty === 1}><i class="fa-solid fa-minus"></i>
+                    <button className="btn btn-light" onClick={reducir} disabled={qty === 1}><i className="fa-solid fa-minus"></i>
                     </button>
                     <span className="my-2 text-center">{qty}</span>
-                    <button className="btn btn-light" onClick={aumentar} disabled={qty === stock}><i class="fa-solid fa-plus"></i>
+                    <button className="btn btn-light" onClick={aumentar} disabled={qty === stock}><i className="fa-solid fa-plus"></i>
                     </button>
                 </div>
             ) : (

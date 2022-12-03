@@ -23,7 +23,7 @@ const Catalogue = () => {
         <div className="container">
             <div className="row">
                 <div className="col-12">
-                    <p className="fs-1 fw-bold text-center">Catalogo</p>
+                    <p className="fs-1 fw-bold text-center">Catálogo</p>
                 </div>
             </div>
             <div className="row ">

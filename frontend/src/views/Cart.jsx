@@ -31,12 +31,12 @@ const Cart = () => {
                 <div className="row d-flex justify-content-center align-items-center h-100">
                     <div className="col-10">
                         <div className="d-flex justify-content-between align-items-center mb-4">
-                            <h3 className="fw-normal mb-0 text-black">Carrito de compras</h3>
+                            <h3 className="fw-normal mb-0 text-black">Carrito de compras:</h3>
                         </div>
                         {cart.map((el) => (
                             <ProductBox item={el} key={el._id} />
                         ))}
-                        {cart.lenght ? (<div className="card text-center pt-3">
+                        {cart.length ? (<div className="card text-center pt-3">
                             <PayPalButtons
                                 createOrder={(data, actions) => {
                                     return actions.order.create({

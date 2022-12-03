@@ -8,9 +8,9 @@ const NotFound = () => {
                             className="img-fluid"/> */}
                     </div>
                     <div className=" col-md-6 mt-5">
-                        <p className="fs-3"> <span className="text-danger">Error</span> Pagina no encontrada.</p>
+                        <p className="fs-3"> <span className="text-danger">Error</span> Página no encontrada.</p>
                         <p className="lead">
-                            La pagina que buscas no existe
+                            La página que buscas no existe
                         </p>
                         <a href="/" className="btn btn-primary">Ir a inicio</a>
                     </div>

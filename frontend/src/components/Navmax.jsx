@@ -18,7 +18,6 @@ const Navmax = () => {
     const logout = () => {
         context.logout()
     }
-    console.log(cartContext.cartState)
     useEffect(()=>{
     },[])
     return (
@@ -43,7 +42,7 @@ const Navmax = () => {
                                     <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Usuario</a>
                                     <ul className="dropdown-menu">
                                         <Link to='/login' className="dropdown-item nav-link">
-                                            Iniciar Sesion
+                                            Iniciar sesión
                                         </Link>
                                         <Link to='/register' className="dropdown-item nav-link">
                                             Registrarse
@@ -64,7 +63,7 @@ const Navmax = () => {
                                         </Link>
                                         }
                                         <button onClick={logout} className="dropdown-item nav-link">
-                                            Cerrar Sesion
+                                            Cerrar sesión
                                         </button>
                                     </ul>
                                 </li>
@@ -72,10 +71,10 @@ const Navmax = () => {
                         </ul>
                     </div>
                     <Link to='/cart' className='style'>
-                    <form class="d-flex ">
-                        <button class="btn btn-outline-dark " type="submit">
-                        <i class="fa-solid fa-cart-shopping "></i>
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">{cartContext.cartState.qty}</span>
+                    <form className="d-flex ">
+                        <button className="btn btn-outline-dark " type="submit">
+                        <i className="fa-solid fa-cart-shopping "></i>
+                            <span className="badge bg-dark text-white ms-1 rounded-pill">{cartContext.cartState.qty}</span>
                         </button>
                     </form> 
                     </Link>

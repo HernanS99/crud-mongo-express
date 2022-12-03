@@ -3,7 +3,7 @@ import about from '../assets/img/about.jpg'
 const Aboutus = () => {
     return(
         <section id="about" className="about">
-            <div className="container mb-5">
+            <div className="container mb-5 pt-5">
                 <div className="row">
                     <div className="col-lg-6">
                         <img src={about} className="img-fluid" alt=""/>
@@ -14,7 +14,7 @@ const Aboutus = () => {
                         Tenemos todo dispuesto para entregar una experiencia única.
                         </p>
                         <ul>
-                            <p><i className="fa-solid fa-check-double"></i>Contamos con componentes de todo tipo para el armado de computadores, desde tarjetas graficas hasta fuentes de poder</p>
+                            <p><i className="fa-solid fa-check-double"></i>Contamos con componentes de todo tipo para el armado de computadores, desde tarjetas gráficas hasta fuentes de poder.</p>
                             <p><i className="fa-solid fa-check-double"/> Contamos con una amplia variedad de marcas de tope de gama.</p>
                         </ul>
                         <div className="row icon-boxes">
@@ -24,7 +24,7 @@ const Aboutus = () => {
                             </div>
                             <div className="col-md-6 mt-4 mt-md-0">
                                 <h4>Tiempo de entrega</h4>
-                                <p>Tenemos el promedio de tiempo de entrega más rapido de la region.</p>
+                                <p>Tenemos el promedio de tiempo de entrega más rapido de la región.</p>
                             </div>
                         </div>
                     </div>

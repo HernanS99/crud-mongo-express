@@ -48,8 +48,8 @@ const Footer = () => {
 
         </div>
         <div className="text-center text-dark p-3 bg-secondary bg-opacity-25">
-          © 2020 Copyright:
-          <a className="text-dark" href="#!">Hernan Silva</a>
+          © 2022 Copyright:
+          <a className="text-dark" href="#!">Hernán Silva</a>
         </div>
       </footer>
     </div>

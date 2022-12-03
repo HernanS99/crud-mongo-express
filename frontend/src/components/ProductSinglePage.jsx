@@ -44,24 +44,24 @@ const ProductSinglePage = () => {
         getProductInfo()
     },[])
     return (
-        <div class="py-5">
-            <div class="container px-4 px-lg-5 my-5">
-                <div class="row gx-4 gx-lg-5 align-items-center">
-                    <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src={product.imgUrl} alt="..." /></div>
-                    <div class="col-md-6">
-                        <h1 class="display-5 fw-bolder">{product.name}</h1>
-                        <div class="fs-5 mb-2">
+        <div className="py-5">
+            <div className="container px-4 px-lg-5 my-5">
+                <div className="row gx-4 gx-lg-5 align-items-center">
+                    <div className="col-md-6"><img className="card-img-top mb-5 mb-md-0" src={product.imgUrl} alt="..." /></div>
+                    <div className="col-md-6">
+                        <h1 className="display-5 fw-bolder">{product.name}</h1>
+                        <div className="fs-5 mb-2">
                             <span>{formatter.format(product.price)}</span>
                         </div>
-                        <p class="lead">{product.desc}</p>
-                        <div class="d-flex">
-                        <button className="btn btn-light" onClick={reducir} disabled={qty === 1}><i class="fa-solid fa-minus"></i>
+                        <p className="lead">{product.desc}</p>
+                        <div className="d-flex">
+                        <button classNameName="btn btn-light" onClick={reducir} disabled={qty === 1}><i className="fa-solid fa-minus"></i>
                     </button>
-                    <span className="my-2 text-center">{qty}</span>
-                            <button className="btn btn-light" onClick={aumentar} disabled={qty === product.stock}><i class="fa-solid fa-plus"></i>
+                    <span classNameName="my-2 text-center">{qty}</span>
+                            <button classNameName="btn btn-light" onClick={aumentar} disabled={qty === product.stock}><i className="fa-solid fa-plus"></i>
                     </button>
-                            <button class="btn btn-outline-dark flex-shrink-0" type="button" onClick={() => context.addToCart(product, qty)}>
-                                <i class="bi-cart-fill me-1"></i>
+                            <button className="btn btn-outline-dark flex-shrink-0" type="button" onClick={() => context.addToCart(product, qty)}>
+                                <i className="bi-cart-fill me-1"></i>
                                 Add to cart
                             </button>
                         </div>
