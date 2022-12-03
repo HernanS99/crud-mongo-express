@@ -1,6 +1,9 @@
 {
   "name": "backend2",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.16.0"
+  },
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -22,8 +25,5 @@
     "mongoose": "^6.7.0",
     "react-hot-toast": "^2.4.0",
     "sweetalert2": "^11.6.15"
-  },
-  "engines": {
-    "node": "6.11.1"
   }
 }
