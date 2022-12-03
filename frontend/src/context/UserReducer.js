@@ -13,7 +13,7 @@ const userReducers = (state, action) => {
                 user:{},
                 token: null }
         case 'EDIT':
-            return {token: payload }
+            return {...state }
         case 'GET':
             return {
                 ...state,
