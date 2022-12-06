@@ -54,7 +54,7 @@ const Navmax = () => {
                                 <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false">Usuario</a>
                                     <ul className="dropdown-menu">
-                                        <Link to='/User' className="dropdown-item nav-link">
+                                        <Link to='/user' className="dropdown-item nav-link">
                                             Mi cuenta
                                         </Link>
                                         {context.userState.user?.isAdmin &&
